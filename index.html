@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethan Smith | Portfolio</title>
+    <meta
+      name="description"
+      content="A cinematic portfolio for Ethan Smith featuring reel work, awards, Limer, writing, and extracurricular roles."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Ethan Smith home">
+          <span class="brand-mark"></span>
+          <span class="brand-name">Ethan Smith</span>
+          <span class="brand-divider" aria-hidden="true"></span>
+          <span class="brand-tagline">Filmmaker • Founder • Builder</span>
+        </a>
+        <nav>
+          <a href="#reel">Reel</a>
+          <a href="#awards">Awards</a>
+          <a href="#field-notes">Films</a>
+          <a href="#limer">Limer</a>
+          <a href="#skills">Skills</a>
+        </nav>
+        <a class="nav-cta" href="mailto:ethanmcsmith@gmail.com">Contact</a>
+      </header>
+
+      <main id="top">
+        <section class="hero section" id="reel" aria-labelledby="hero-title">
+          <div class="ambient ambient-one"></div>
+          <div class="ambient ambient-two"></div>
+          <div class="hero-grid">
+            <div class="reel-card" aria-label="Portfolio reel preview">
+              <div class="reel-frame">
+                <video
+                  class="reel-video"
+                  poster=""
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  preload="auto"
+                  aria-label="Personal reel video"
+                ></video>
+                <div class="reel-placeholder">
+                  <span class="play-button" aria-hidden="true"></span>
+                  <p>Drop your reel video into <strong>assets/reel.mp4</strong></p>
+                </div>
+                <div class="scanline"></div>
+              </div>
+              <div class="reel-meta">
+                <span>Ethan Smith Production Reel</span>
+                <span>Looping cut</span>
+              </div>
+            </div>
+
+            <div class="hero-copy">
+              <div class="hero-text">
+                <h1 id="hero-title">Welcome to the Mind of Ethan Smith</h1>
+                <p class="hero-lede">
+                  In everything he does, Ethan Smith tells a story. He is a filmmaker, a software engineer, an artist in both, and a maker of moments. 
+                  The goal of this young man is to be a source of fond "forever memories" in the lives of others.
+                </p>
+                <div class="hero-actions">
+                  <a class="button secondary" href="#limer">Enter Ethan's Logic</a>
+                  <a class="button primary" href="#field-notes">Enter Ethan's Imagination</a>
+                </div>
+              </div>
+              <a class="hero-portrait" href="#skills" aria-label="Go to Ethan Smith skills section">
+                <img class="hero-head" src="assets/ethanHead.png" alt="Ethan Smith" />
+                <img class="hero-brain" src="assets/ethanBrain.png" alt="" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section awards" id="awards" aria-labelledby="awards-title">
+          <div class="section-heading">
+            <p class="eyebrow">Recognition</p>
+            <h2 id="awards-title">Awards Received Along The Way.</h2>
+          </div>
+          <div class="award-grid">
+            <article class="award-card featured">
+              <div class="award-logo-row">
+                <div class="award-logo award-logo-bea">
+                  <img src="assets/BEABlack.png" alt="Broadcast Education Association logo" />
+                </div>
+                <img class="award-laurels" src="assets/laurels.png" alt="Award laurels" />
+              </div>
+              <span class="award-year">2025</span>
+              <h3>BEA Award of Excellence in Scriptwriting</h3>
+              <p>In February 2025, Ethan Smith was the recipient of the Broadcast Education Association (BEA) Award of Excellence in Scriptwriting 
+                 for his original short film script, <em>Earl's Portrait</em> (2024).</p>
+            </article>
+            <article class="award-card">
+              <div class="award-logo award-logo-deadcenter">
+                <img src="assets/deadCenter.png" alt="deadCenter Film logo" />
+              </div>
+              <span class="award-year">2026</span>
+              <h3>deadCenter Film Education Scriptwriting Finalist</h3>
+              <p>In March 2026, Ethan Smith's <em>The Civilizing Effect</em> (2026),  
+                 was selected as a finalist in the deadCenter Film Education Writer's Room competition.</p>
+            </article>
+            <article class="award-card">
+              <div class="award-logo award-logo-uwc">
+                <img src="assets/uwc.png" alt="United World Colleges logo" />
+              </div>
+              <span class="award-year">Since 2022</span>
+              <h3>United World College Scholar</h3>
+              <p>In August 2022, Ethan Smith became a member of the United World Scholars Program, 
+                 studying at the University of Oklahoma on a full scholarship 
+                 from the Shelby Davis Foundation.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section notes" id="field-notes" aria-labelledby="notes-title">
+          <div class="section-heading film-heading">
+            <p class="eyebrow">Filmography</p>
+            <h2 id="notes-title">The Mind That Brought You...</h2>
+          </div>
+          <div class="notes-grid">
+            <article class="note-card">
+              <div class="note-image film-preview">
+                <video
+                  src="assets/Steel Hearts Class Premiere.mp4"
+                  poster="assets/SteelHeartsThumbnail.png"
+                  controls
+                  preload="metadata"
+                  aria-label="Steel Hearts short film preview"
+                ></video>
+              </div>
+              <div class="note-body">
+                <p class="note-kicker">Short Film • 2026</p>
+                <h3>Steel Hearts</h3>
+                <p class="note-role">Executive Producer, Script Supervisor, 1st Assistant Director & 2nd Assistant Camera</p>
+                <p>
+                  On opposite sides of a covert war, two elite operatives with a history of betrayal
+                  and attraction cross paths during a warehouse heist, where old wounds and buried
+                  feelings threaten to ruin the mission.
+                </p>
+              </div>
+            </article>
+            <article class="note-card">
+              <div class="note-image film-preview">
+                <video
+                  src="assets/The Civilizing Effect.mp4"
+                  poster="assets/TheCivilizingEffectThumbnail2.png"
+                  controls
+                  preload="metadata"
+                  aria-label="The Civilizing Effect short film preview"
+                ></video>
+              </div>
+              <div class="note-body">
+                <p class="note-kicker">Short Film • 2026</p>
+                <h3>The Civilizing Effect</h3>
+                <p class="note-role">Writer, Script Supervisor & 1st Assistant Camera</p>
+                <p>
+                  A scientist tests a new behavioral chip on his android assistant. As the system begins
+                  rewarding ruthless efficiency over empathy, the experiment reveals how easily identity
+                  can be reshaped by a system's incentives.
+                </p>
+              </div>
+            </article>
+            <article class="note-card">
+              <div class="note-image film-preview">
+                <video
+                  src="assets/The Talking Stage (2024).mov"
+                  poster="assets/TheTalkingStageThumbnail.png"
+                  controls
+                  preload="metadata"
+                  aria-label="The Talking Stage short film preview"
+                ></video>
+              </div>
+              <div class="note-body">
+                <p class="note-kicker">Short Film • 2024</p>
+                <h3>The Talking Stage</h3>
+                <p class="note-role">Writer, Director, Cinematographer, Actor & Editor</p>
+                <p>
+                  An artsy girl with a promiscuous reputation and a smooth, outgoing rapper take their
+                  budding romance through the talking stage.
+                </p>
+              </div>
+            </article>
+            <article class="note-card">
+              <div class="note-image film-preview">
+                <video
+                  src="assets/Nails (2023).mp4"
+                  poster="assets/NailsThumbnail.png"
+                  controls
+                  preload="metadata"
+                  aria-label="Nails short film preview"
+                ></video>
+              </div>
+              <div class="note-body">
+                <p class="note-kicker">Short Film • 2023</p>
+                <h3>Nails</h3>
+                <p class="note-role">Writer & Set Designer</p>
+                <p>
+                  After a flat tire strands him near an isolated old house, a nervous traveler accepts
+                  dinner from its unsettling occupant and slowly realizes the accident may have been a trap.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="section limer" id="limer" aria-labelledby="limer-title">
+          <div class="phone-stage">
+            <div class="phone">
+              <div class="phone-top" aria-hidden="true"></div>
+              <div class="app-screen" aria-label="Scrollable Limer app screenshots" tabindex="0">
+                <img src="assets/LimerHomeFeedPage.PNG" alt="Limer home feed tab" />
+                <img src="assets/LimerExplorePage.PNG" alt="Limer explore tab" />
+                <img src="assets/LimerEventPage.PNG" alt="Limer event tab" />
+                <img src="assets/LimerChatPage.PNG" alt="Limer chat tab" />
+                <img src="assets/LimerProfilePage.PNG" alt="Limer profile tab" />
+              </div>
+              <div class="phone-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <button class="phone-control phone-control-prev" type="button" aria-label="Previous Limer tab">
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button class="phone-control phone-control-next" type="button" aria-label="Next Limer tab">
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+          <div class="limer-copy">
+            <p class="eyebrow">Full Stack App Development</p>
+            <div class="limer-title-row">
+              <img class="limer-logo" src="assets/LimerLogo.png" alt="Limer logo" />
+              <h2 id="limer-title">Limer - The College Connector</h2>
+            </div>
+            <p>
+              Limer is the social app I’m building for the college experience, where clubs, events, and group chats actually connect instead of living in separate places. You can discover what’s happening, see who’s going, post a recap, and keep the conversation moving without it turning into another dead group chat. It’s built around one idea, make it easier to meet people in real life, and make campus feel smaller in a good way.
+            </p>
+            <div class="feature-list">
+              <div>
+                <span>01</span>
+                <p>Browse clubs and events, RSVP & stop guessing where everyone’s going.</p>
+              </div>
+              <div>
+                <span>02</span>
+                <p>Share memories at the Bonfire & tag the event so it's tied to a real moment.</p>
+              </div>
+              <div>
+                <span>03</span>
+                <p>Make plans in DMs, group chats & club chats with QuickReply built in.</p>
+              </div>
+            </div>
+            <span class="button primary launch-badge">Launching Sept. 2026</span>
+          </div>
+        </section>
+
+        <section class="section skills" id="skills" aria-labelledby="skills-title">
+          <div class="skills-layout">
+            <div class="skills-heading">
+              <p class="eyebrow">Capabilities</p>
+              <h2 id="skills-title">Ethan's Very Specific Set of Skills</h2>
+            </div>
+            <div class="skills-content">
+              <div class="skills-grid">
+                <article class="skill-card skill-card-content">
+                  <span>01</span>
+                  <h3>Content & UX</h3>
+                  <p>Content strategy, UX writing, content architecture, inclusive design, accessibility standards, and AP Style.</p>
+                </article>
+                <article class="skill-card skill-card-product">
+                  <span>02</span>
+                  <h3>Product & Engineering</h3>
+                  <p>TypeScript/JavaScript, React Native, Supabase, PostgreSQL, Auth, Storage, RESTful APIs, Git, Figma, and Jira.</p>
+                </article>
+                <article class="skill-card skill-card-film">
+                  <span>03</span>
+                  <h3>Film & Creative Production</h3>
+                  <p>Scriptwriting, directing, cinematography, editing, set design, script supervision, camera support, Premiere, Audition, and Photoshop.</p>
+                </article>
+                <article class="skill-card skill-card-leadership">
+                  <span>04</span>
+                  <h3>Leadership & Brand</h3>
+                  <p>Project management, team leadership, social media marketing, campaign strategy, event branding, community engagement, and student organization growth.</p>
+                </article>
+              </div>
+              <div class="resume-panel">
+                <p>
+                  A practical mix of filmmaking, UX, software, leadership, and brand-building experience,
+                  shaped through Limer, student media leadership, creative production, and community work.
+                </p>
+                <a class="button primary" href="assets/EthanMCSmith Resume.pdf" download>Download Resume</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <p>"May we never meet the timid souls who know neither victory nor defeat." -  Ethan</p>
+        <div class="footer-links">
+          <a href="mailto:ethanmcsmith@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/ethan-smith-18447122a/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/e_smith7/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+.DS_Store
+assets/.DS_Store
+
+# Original video exports are too large for normal Git/GitHub pushes.
+# Use compressed web copies or external video hosting for production.
+assets/*.mov
+assets/*.mp4
+assets/web-videos/
