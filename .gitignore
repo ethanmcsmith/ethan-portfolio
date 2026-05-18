@@ -5,4 +5,5 @@ assets/.DS_Store
 # Use compressed web copies or external video hosting for production.
 assets/*.mov
 assets/*.mp4
+assets/compressed/
 assets/web-videos/

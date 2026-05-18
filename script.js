@@ -1,6 +1,10 @@
 const reel = document.querySelector(".reel-video");
 const placeholder = document.querySelector(".reel-placeholder");
-const reelSources = ["assets/reel.mp4", "assets/Ethan Smith´s Reel May 2026.mov"];
+const reelSources = [
+  "https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/Ethan%20Reel%20Compressed.mp4",
+  "assets/reel.mp4",
+  "assets/Ethan Smith´s Reel May 2026.mov",
+];
 let reelSourceIndex = 0;
 const appScreen = document.querySelector(".app-screen");
 const phoneDots = document.querySelectorAll(".phone-dots span");
