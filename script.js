@@ -10,6 +10,10 @@ const appScreen = document.querySelector(".app-screen");
 const phoneDots = document.querySelectorAll(".phone-dots span");
 const phonePrev = document.querySelector(".phone-control-prev");
 const phoneNext = document.querySelector(".phone-control-next");
+const contactButton = document.querySelector(".nav-cta");
+const contactModal = document.querySelector("#contact-modal");
+const contactCloseButtons = document.querySelectorAll("[data-contact-close]");
+let lastFocusedElement = null;
 
 if (reel) {
   reel.src = reelSources[reelSourceIndex];
@@ -65,6 +69,36 @@ if (appScreen && phoneDots.length) {
   phonePrev?.addEventListener("click", () => scrollPhone(-1));
   phoneNext?.addEventListener("click", () => scrollPhone(1));
   updatePhoneDots();
+}
+
+if (contactButton && contactModal) {
+  const openContactModal = () => {
+    lastFocusedElement = document.activeElement;
+    contactModal.hidden = false;
+    contactButton.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+    contactModal.querySelector(".contact-close")?.focus();
+  };
+
+  const closeContactModal = () => {
+    contactModal.hidden = true;
+    contactButton.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    lastFocusedElement?.focus();
+  };
+
+  contactButton.addEventListener("click", openContactModal);
+  contactCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeContactModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (contactModal.hidden || event.key !== "Escape") {
+      return;
+    }
+
+    closeContactModal();
+  });
 }
 
 const cards = document.querySelectorAll(".award-card, .note-card");

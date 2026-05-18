@@ -133,6 +133,11 @@ a {
   font-weight: 600;
 }
 
+.nav-cta {
+  font-family: inherit;
+  cursor: pointer;
+}
+
 .topbar nav a:hover,
 .nav-cta:hover {
   color: var(--text);
@@ -147,6 +152,110 @@ a {
   background:
     linear-gradient(#050505, #050505) padding-box,
     linear-gradient(135deg, rgba(255, 122, 24, 0.8), rgba(24, 214, 200, 0.75)) border-box;
+}
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.contact-modal[hidden] {
+  display: none;
+}
+
+.contact-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background:
+    radial-gradient(circle at 28% 30%, rgba(255, 122, 24, 0.14), transparent 28rem),
+    radial-gradient(circle at 72% 62%, rgba(24, 214, 200, 0.16), transparent 30rem),
+    rgba(0, 0, 0, 0.76);
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+}
+
+.contact-dialog {
+  position: relative;
+  width: min(100%, 34rem);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background:
+    linear-gradient(#070707, #070707) padding-box,
+    linear-gradient(135deg, rgba(255, 122, 24, 0.8), rgba(24, 214, 200, 0.75)) border-box;
+  box-shadow:
+    0 2rem 7rem rgba(0, 0, 0, 0.72),
+    0 0 80px rgba(24, 214, 200, 0.1);
+}
+
+.contact-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  display: inline-grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted-strong);
+  font: inherit;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-close:hover {
+  color: var(--text);
+  border-color: rgba(24, 214, 200, 0.42);
+}
+
+.contact-dialog h2 {
+  max-width: 10ch;
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.2rem, 7vw, 4.25rem);
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-list a {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
+  color: var(--text);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.contact-list a:hover {
+  border-color: rgba(24, 214, 200, 0.45);
+  background:
+    linear-gradient(135deg, rgba(255, 122, 24, 0.12), rgba(24, 214, 200, 0.1)),
+    var(--panel-strong);
+  transform: translateY(-2px);
+}
+
+.contact-list span {
+  color: var(--cyan-soft);
+  font-size: 0.72rem;
+  text-transform: uppercase;
 }
 
 .section {
