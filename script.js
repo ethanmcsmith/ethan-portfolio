@@ -101,17 +101,72 @@ if (contactButton && contactModal) {
   });
 }
 
-const cards = document.querySelectorAll(".award-card, .note-card");
+const proximityCards = document.querySelectorAll(".award-card, .note-card, .skill-card");
+const canAnimateCards = window.matchMedia("(hover: hover) and (pointer: fine)");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const proximityRadius = 210;
+let pointerPosition = null;
+let cardAnimationFrame = null;
 
-cards.forEach((card) => {
-  card.addEventListener("pointermove", (event) => {
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+const resetProximityCard = (card) => {
+  card.classList.remove("is-near");
+  card.style.setProperty("--card-rotate-x", "0deg");
+  card.style.setProperty("--card-rotate-y", "0deg");
+  card.style.setProperty("--card-lift", "0px");
+};
+
+const updateProximityCards = () => {
+  cardAnimationFrame = null;
+
+  proximityCards.forEach((card) => {
+    if (!pointerPosition) {
+      resetProximityCard(card);
+      return;
+    }
+
     const rect = card.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
-    const y = ((event.clientY - rect.top) / rect.height - 0.5) * -8;
-    card.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg) translateY(-2px)`;
+    const nearestX = clamp(pointerPosition.x, rect.left, rect.right);
+    const nearestY = clamp(pointerPosition.y, rect.top, rect.bottom);
+    const distance = Math.hypot(pointerPosition.x - nearestX, pointerPosition.y - nearestY);
+    const strength = clamp(1 - distance / proximityRadius, 0, 1);
+
+    if (!strength) {
+      resetProximityCard(card);
+      return;
+    }
+
+    const x = clamp((pointerPosition.x - (rect.left + rect.width / 2)) / (rect.width / 2), -1, 1);
+    const y = clamp((pointerPosition.y - (rect.top + rect.height / 2)) / (rect.height / 2), -1, 1);
+
+    card.classList.add("is-near");
+    card.style.setProperty("--card-rotate-x", `${(-y * strength * 4).toFixed(2)}deg`);
+    card.style.setProperty("--card-rotate-y", `${(x * strength * 4).toFixed(2)}deg`);
+    card.style.setProperty("--card-lift", `${(-strength * 4).toFixed(2)}px`);
+  });
+};
+
+const queueProximityCardsUpdate = () => {
+  if (!cardAnimationFrame) {
+    cardAnimationFrame = window.requestAnimationFrame(updateProximityCards);
+  }
+};
+
+if (proximityCards.length && canAnimateCards.matches && !reduceMotion.matches) {
+  proximityCards.forEach((card) => {
+    card.classList.add("proximity-card");
   });
 
-  card.addEventListener("pointerleave", () => {
-    card.style.transform = "";
+  document.addEventListener("pointermove", (event) => {
+    pointerPosition = { x: event.clientX, y: event.clientY };
+    queueProximityCardsUpdate();
+  }, { passive: true });
+
+  document.addEventListener("pointerleave", () => {
+    pointerPosition = null;
+    queueProximityCardsUpdate();
   });
-});
+
+  document.addEventListener("scroll", queueProximityCardsUpdate, { passive: true });
+}
