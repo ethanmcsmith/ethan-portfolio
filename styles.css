@@ -473,10 +473,7 @@ h3 {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-block: 1px solid rgba(255, 255, 255, 0.1);
-  background:
-    linear-gradient(120deg, rgba(255, 122, 24, 0.26), transparent 34%),
-    radial-gradient(circle at 74% 38%, rgba(24, 214, 200, 0.36), transparent 28%),
-    linear-gradient(160deg, #142426, #030303 64%);
+  background: #000;
   box-shadow:
     0 2rem 7rem rgba(0, 0, 0, 0.7),
     inset 0 0 0 1px rgba(255, 255, 255, 0.03);
@@ -492,43 +489,7 @@ h3 {
 .reel-placeholder {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 1rem;
-  padding: 2rem;
-  text-align: center;
-}
-
-.reel-placeholder p {
-  max-width: 20rem;
-  margin: 0;
-  color: var(--muted-strong);
-  line-height: 1.55;
-}
-
-.play-button {
-  width: clamp(4.4rem, 8vw, 6rem);
-  height: clamp(4.4rem, 8vw, 6rem);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 50%;
-  background:
-    linear-gradient(135deg, rgba(255, 122, 24, 0.9), rgba(8, 127, 134, 0.95)),
-    rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 0 70px rgba(255, 122, 24, 0.34),
-    0 0 90px rgba(24, 214, 200, 0.28);
-}
-
-.play-button::after {
-  display: block;
-  width: 0;
-  height: 0;
-  margin: 1.78rem 0 0 2.1rem;
-  border-top: 0.62rem solid transparent;
-  border-bottom: 0.62rem solid transparent;
-  border-left: 1rem solid white;
-  content: "";
+  background: #000;
 }
 
 .scanline {
