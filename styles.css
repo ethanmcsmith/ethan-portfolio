@@ -1318,8 +1318,8 @@ h3 {
   }
 
   .hero-portrait {
-    justify-self: start;
-    align-self: start;
+    justify-self: center;
+    align-self: center;
     width: min(20rem, 82vw);
     height: auto;
     margin-right: 0;
@@ -1331,6 +1331,10 @@ h3 {
 
   .section {
     padding: 4.75rem 0;
+  }
+
+  .reflections {
+    padding: 1.15rem;
   }
 
   .hero {
@@ -1369,7 +1373,10 @@ h3 {
   }
 
   .nav-cta {
-    max-width: 7.5rem;
+    flex: 0 0 auto;
+    width: min(18rem, 100%);
+    max-width: none;
+    margin-inline: auto;
   }
 
   .brand-tagline {
