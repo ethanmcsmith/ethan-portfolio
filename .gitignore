@@ -7,3 +7,12 @@ assets/*.mov
 assets/*.mp4
 assets/compressed/
 assets/web-videos/
+
+# Full-resolution source exports for the NABJ gallery.
+assets/AryannaNABJ.JPG
+assets/EthanNABJ.JPG
+assets/LaurenNABJ.JPG
+assets/NABJ Group Pic.PNG
+assets/RaeganNABJ.JPG
+assets/RyanNABJ.JPG
+assets/TanaeNABJ.JPG
