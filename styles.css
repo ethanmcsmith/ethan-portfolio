@@ -1050,7 +1050,7 @@ h3 {
 .visual-feature-copy {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   padding: clamp(1.15rem, 3vw, 2rem);
 }
 
