@@ -979,6 +979,11 @@ h3 {
   gap: clamp(1.1rem, 2.8vw, 2rem);
 }
 
+.flatline-case {
+  --gym-blue: #b51724;
+  --gym-blue-soft: #ff6a70;
+}
+
 .case-hero {
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
@@ -993,6 +998,15 @@ h3 {
     linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.025)),
     #05070b;
   box-shadow: 0 2rem 7rem rgba(0, 0, 0, 0.46);
+}
+
+.flatline-case .case-hero {
+  border-color: rgba(255, 106, 112, 0.34);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(181, 23, 36, 0.24), transparent 24rem),
+    radial-gradient(circle at 90% 14%, rgba(88, 150, 112, 0.18), transparent 24rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.025)),
+    #06100b;
 }
 
 .case-hero-copy {
@@ -1102,6 +1116,18 @@ h3 {
     url("assets/case-496-team.jpg") center / cover;
 }
 
+.flatline-case .browser-preview {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.78)),
+    url("assets/case-flatline-hero.jpg") center / cover;
+}
+
+.flatline-case .browser-preview::before {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(181, 23, 36, 0.42), transparent 18rem),
+    rgba(4, 16, 10, 0.36);
+}
+
 .browser-preview::before {
   position: absolute;
   inset: 0;
@@ -1121,6 +1147,14 @@ h3 {
   height: clamp(4.8rem, 10vw, 7rem);
   object-fit: contain;
   filter: drop-shadow(0 0 34px rgba(98, 160, 255, 0.4));
+}
+
+.flatline-logo-mark {
+  width: min(18rem, 82%);
+  height: auto;
+  padding: 0.75rem 1rem;
+  border-radius: 0.45rem;
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .browser-preview p {
@@ -1334,6 +1368,10 @@ h3 {
   margin-top: 1rem;
 }
 
+.flatline-swatches {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .swatch {
   display: grid;
   min-height: 4.4rem;
@@ -1376,6 +1414,29 @@ h3 {
   background: #ff5fa2;
 }
 
+.swatch.flatline-red {
+  background: #b51724;
+}
+
+.swatch.flatline-green {
+  background: #153f2b;
+}
+
+.swatch.flatline-mint {
+  background: #dcefe4;
+  color: #06100b;
+}
+
+.swatch.flatline-cream {
+  background: #f6f2e8;
+  color: #06100b;
+}
+
+.swatch.flatline-black {
+  background: #06100b;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
 .decision-card {
   display: grid;
   align-content: start;
@@ -1386,6 +1447,62 @@ h3 {
   margin: 0;
   color: var(--text);
   font-size: 0.92rem;
+}
+
+.service-architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.service-architecture-grid article {
+  position: relative;
+  overflow: hidden;
+  min-height: 18rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--panel-strong);
+}
+
+.service-architecture-grid article::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.05) 32%, rgba(0, 0, 0, 0.86)),
+    radial-gradient(circle at 0% 100%, rgba(181, 23, 36, 0.28), transparent 55%);
+}
+
+.service-architecture-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 18rem;
+  object-fit: cover;
+}
+
+.service-architecture-grid span,
+.service-architecture-grid h4 {
+  position: absolute;
+  left: 1rem;
+  z-index: 2;
+  margin: 0;
+}
+
+.service-architecture-grid span {
+  bottom: 3.45rem;
+  color: var(--gym-blue-soft);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.service-architecture-grid h4 {
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 1.08rem;
 }
 
 .case-timeline {
@@ -1879,6 +1996,7 @@ h3 {
   .case-timeline,
   .screenshot-grid,
   .case-event-strip,
+  .service-architecture-grid,
   .visual-feature-card,
   .visual-grid,
   .reflection-card {
