@@ -972,10 +972,285 @@ h3 {
   right: clamp(0.5rem, 6vw, 3rem);
 }
 
+.case-study {
+  display: grid;
+  gap: clamp(1.2rem, 3vw, 2rem);
+}
+
+.case-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  overflow: hidden;
+  border: 1px solid rgba(24, 214, 200, 0.3);
+  border-radius: 0.65rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(18, 95, 255, 0.22), transparent 26rem),
+    radial-gradient(circle at 100% 20%, rgba(24, 214, 200, 0.13), transparent 24rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    #060707;
+  box-shadow: 0 2rem 7rem rgba(0, 0, 0, 0.42);
+}
+
+.case-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.35rem, 4vw, 3rem);
+}
+
+.case-logo {
+  width: clamp(4.5rem, 9vw, 7rem);
+  height: clamp(4.5rem, 9vw, 7rem);
+  object-fit: contain;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 0 32px rgba(24, 84, 255, 0.34));
+}
+
+.case-hero-copy h2 {
+  max-width: 11ch;
+  margin-bottom: 1rem;
+}
+
+.case-hero-copy > p:not(.eyebrow) {
+  max-width: 39rem;
+  margin-bottom: 1.35rem;
+  color: var(--muted-strong);
+  font-size: clamp(1rem, 1.45vw, 1.14rem);
+  line-height: 1.7;
+}
+
+.case-hero-media {
+  min-height: 28rem;
+  background: var(--panel-strong);
+}
+
+.case-hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-tags,
+.case-competency-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.case-tags span,
+.case-competency-grid span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  padding: 0 0.8rem;
+  border: 1px solid rgba(24, 214, 200, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--muted-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.case-overview-grid,
+.case-timeline,
+.case-deep-grid,
+.case-split {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-overview-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.case-mini-card,
+.case-step,
+.case-study-card {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
+}
+
+.case-mini-card {
+  padding: 1rem;
+}
+
+.case-mini-card span,
+.case-step span {
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  color: var(--cyan-soft);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.case-mini-card p,
+.case-step p,
+.case-study-card p,
+.case-problem-list p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.case-section-heading {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: clamp(0.8rem, 2vw, 1.6rem);
+}
+
+.case-section-heading h3 {
+  max-width: 17ch;
+  margin-bottom: 0;
+  font-size: clamp(1.85rem, 3.6vw, 3.2rem);
+}
+
+.case-timeline {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.case-step {
+  padding: 1.1rem;
+}
+
+.case-step h4,
+.case-event-strip h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.case-step h4 {
+  margin-bottom: 0.55rem;
+}
+
+.case-deep-grid {
+  grid-template-columns: 1.35fr 1fr;
+}
+
+.case-study-card {
+  padding: clamp(1rem, 2.4vw, 1.4rem);
+}
+
+.case-feature-card {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: auto 1fr;
+  gap: 1.2rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(18, 95, 255, 0.2), transparent 18rem),
+    radial-gradient(circle at 100% 100%, rgba(24, 214, 200, 0.16), transparent 20rem),
+    var(--panel-strong);
+}
+
+.case-study-card h3 {
+  max-width: 12ch;
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+}
+
+.class-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  align-self: end;
+}
+
+.class-schedule-grid span {
+  display: grid;
+  min-height: 5.5rem;
+  align-content: end;
+  padding: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--class-color), transparent 45%);
+  border-radius: 0.45rem;
+  background:
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.62)),
+    color-mix(in srgb, var(--class-color), #050505 78%);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.class-schedule-grid strong {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+}
+
+.case-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-list li {
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.case-event-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.case-event-strip article {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--panel-strong);
+}
+
+.case-event-strip img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.case-event-strip span {
+  display: inline-flex;
+  margin: 1rem 1rem 0.35rem;
+  color: var(--cyan-soft);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.case-event-strip h4 {
+  padding: 0 1rem 1rem;
+}
+
+.case-split {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.case-problem-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-problem-list strong {
+  color: var(--text);
+}
+
+.case-competency-grid span {
+  border-radius: 0.45rem;
+}
+
 .feature-list {
   display: grid;
   gap: 0.75rem;
   margin: 2rem 0;
+}
+
+.coding-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
 .feature-list div {
@@ -1400,6 +1675,12 @@ h3 {
   .skills-layout,
   .skills-grid,
   .notes-grid,
+  .case-hero,
+  .case-overview-grid,
+  .case-timeline,
+  .case-deep-grid,
+  .case-event-strip,
+  .case-split,
   .visual-feature-card,
   .visual-grid,
   .reflection-card {
@@ -1468,6 +1749,19 @@ h3 {
     min-height: 0;
   }
 
+  .case-hero-copy {
+    justify-content: start;
+  }
+
+  .case-hero-media {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .class-schedule-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .award-year {
     margin-bottom: 2rem;
   }
@@ -1516,6 +1810,7 @@ h3 {
   }
 
   .hero-actions,
+  .coding-actions,
   .footer-links {
     flex-direction: column;
   }
@@ -1523,6 +1818,16 @@ h3 {
   .button,
   .footer-links a {
     width: 100%;
+  }
+
+  .case-tags span,
+  .case-competency-grid span {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .case-section-heading h3 {
+    max-width: 13ch;
   }
 
   h1 {
