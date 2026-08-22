@@ -20,12 +20,9 @@
           <span class="brand-tagline">Filmmaker • Founder • Builder</span>
         </a>
         <nav>
-          <a href="#reel">Reel</a>
-          <a href="#awards">Awards</a>
-          <a href="#field-notes">Films</a>
-          <a href="#visuals">Visuals</a>
-          <a href="#limer">Coding</a>
-          <a href="#skills">Skills</a>
+          <button type="button" data-view-trigger="media">Media</button>
+          <button type="button" data-view-trigger="product">Product Design</button>
+          <a href="#skills" data-shared-link>Skills</a>
         </nav>
         <button class="nav-cta" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="contact-modal">
           Contact
@@ -60,6 +57,24 @@
       </div>
 
       <main id="top">
+        <section class="path-gateway" id="gateway" aria-labelledby="gateway-title">
+          <div class="gateway-copy">
+            <p class="eyebrow">Choose A Portfolio Path</p>
+            <h1 id="gateway-title">Which side of Ethan's work do you want to enter?</h1>
+          </div>
+          <div class="gateway-options">
+            <button class="gateway-card media-card" type="button" data-view-trigger="media">
+              <span>Media Portfolio</span>
+              <strong>Film, reel work, photography, visual design, and creative reflections.</strong>
+            </button>
+            <button class="gateway-card product-card" type="button" data-view-trigger="product">
+              <span>Product Design & Development</span>
+              <strong>Apps, websites, UX case studies, content strategy, and shipped digital experiences.</strong>
+            </button>
+          </div>
+        </section>
+
+        <div class="portfolio-view media-view" data-portfolio-view="media" hidden>
         <section class="hero section" id="reel" aria-labelledby="hero-title">
           <div class="ambient ambient-one"></div>
           <div class="ambient ambient-two"></div>
@@ -328,7 +343,35 @@
             </div>
           </div>
         </section>
-        <section class="section limer" id="limer" aria-labelledby="limer-title">
+        </div>
+
+        <div class="portfolio-view product-view" data-portfolio-view="product" hidden>
+        <section class="section product-overview" id="product-projects" aria-labelledby="product-title">
+          <div class="section-heading">
+            <p class="eyebrow">Product Design & Development</p>
+            <h2 id="product-title">Digital Work With A User On The Other Side.</h2>
+          </div>
+          <p>
+            These projects combine web and app development, UI/UX design, content strategy, stakeholder
+            thinking, and product decisions. Choose a project to go deeper.
+          </p>
+          <div class="product-tablist" role="tablist" aria-label="Product design and development projects">
+            <button class="product-tab is-active" id="tab-limer" type="button" role="tab" aria-selected="true" aria-controls="limer" data-project-tab="limer">
+              <img src="assets/LimerLogo.png" alt="" aria-hidden="true" />
+              <span>Limer</span>
+            </button>
+            <button class="product-tab" id="tab-496" type="button" role="tab" aria-selected="false" aria-controls="case-study-496" data-project-tab="496">
+              <img src="assets/case-496-logo.png" alt="" aria-hidden="true" />
+              <span>496 Gym</span>
+            </button>
+            <button class="product-tab" id="tab-flatline" type="button" role="tab" aria-selected="false" aria-controls="case-study-flatline" data-project-tab="flatline">
+              <img src="assets/case-flatline-logo.png" alt="" aria-hidden="true" />
+              <span>Flatline</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="section limer product-project-panel is-active" id="limer" aria-labelledby="limer-title" role="tabpanel" data-project-panel="limer">
           <div class="phone-stage">
             <div class="phone">
               <div class="phone-top" aria-hidden="true"></div>
@@ -385,7 +428,7 @@
           </div>
         </section>
 
-        <section class="section case-study" id="case-study-496" aria-labelledby="case-496-title">
+        <section class="section case-study product-project-panel" id="case-study-496" aria-labelledby="case-496-title" role="tabpanel" data-project-panel="496" hidden>
           <div class="case-hero">
             <div class="case-hero-copy">
               <p class="eyebrow">Product Case Study</p>
@@ -754,7 +797,7 @@
           </div>
         </section>
 
-        <section class="section case-study flatline-case" id="case-study-flatline" aria-labelledby="case-flatline-title">
+        <section class="section case-study flatline-case product-project-panel" id="case-study-flatline" aria-labelledby="case-flatline-title" role="tabpanel" data-project-panel="flatline" hidden>
           <div class="case-hero">
             <div class="case-hero-copy">
               <p class="eyebrow">Launched Business Website</p>
@@ -1149,8 +1192,9 @@
             </article>
           </div>
         </section>
+        </div>
 
-        <section class="section reflections" id="reflections" aria-labelledby="reflection-title">
+        <section class="section reflections media-followup" id="reflections" aria-labelledby="reflection-title" hidden>
           <div class="section-heading">
             <p class="eyebrow">Reflection</p>
             <h2 id="reflection-title">Looking Back At My Work</h2>
@@ -1194,7 +1238,7 @@
           </article>
         </section>
 
-        <section class="section skills" id="skills" aria-labelledby="skills-title">
+        <section class="section skills shared-content" id="skills" aria-labelledby="skills-title" hidden>
           <div class="skills-layout">
             <div class="skills-heading">
               <p class="eyebrow">Capabilities</p>

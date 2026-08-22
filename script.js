@@ -10,10 +10,18 @@ const appScreen = document.querySelector(".app-screen");
 const phoneDots = document.querySelectorAll(".phone-dots span");
 const phonePrev = document.querySelector(".phone-control-prev");
 const phoneNext = document.querySelector(".phone-control-next");
+const viewTriggers = document.querySelectorAll("[data-view-trigger]");
+const portfolioViews = document.querySelectorAll("[data-portfolio-view]");
+const mediaFollowups = document.querySelectorAll(".media-followup");
+const sharedContent = document.querySelectorAll(".shared-content");
+const productTabs = document.querySelectorAll("[data-project-tab]");
+const productPanels = document.querySelectorAll("[data-project-panel]");
+const sharedLinks = document.querySelectorAll("[data-shared-link]");
 const contactButton = document.querySelector(".nav-cta");
 const contactModal = document.querySelector("#contact-modal");
 const contactCloseButtons = document.querySelectorAll("[data-contact-close]");
 let lastFocusedElement = null;
+let refreshPhoneDots = () => {};
 
 if (reel) {
   reel.src = reelSources[reelSourceIndex];
@@ -47,7 +55,11 @@ if (reel) {
 }
 
 if (appScreen && phoneDots.length) {
-  const updatePhoneDots = () => {
+  refreshPhoneDots = () => {
+    if (!appScreen.clientWidth) {
+      return;
+    }
+
     const activeIndex = Math.round(appScreen.scrollLeft / appScreen.clientWidth);
 
     phoneDots.forEach((dot, index) => {
@@ -65,11 +77,191 @@ if (appScreen && phoneDots.length) {
     });
   };
 
-  appScreen.addEventListener("scroll", updatePhoneDots, { passive: true });
+  appScreen.addEventListener("scroll", refreshPhoneDots, { passive: true });
   phonePrev?.addEventListener("click", () => scrollPhone(-1));
   phoneNext?.addEventListener("click", () => scrollPhone(1));
-  updatePhoneDots();
+  refreshPhoneDots();
 }
+
+const projectHashMap = {
+  "#limer": "limer",
+  "#case-study-496": "496",
+  "#case-process": "496",
+  "#case-study-flatline": "flatline",
+  "#flatline-decisions": "flatline",
+};
+
+const mediaHashes = new Set(["#reel", "#awards", "#field-notes", "#visuals", "#reflections"]);
+const productHashes = new Set(["#product-projects", ...Object.keys(projectHashMap)]);
+
+const setSharedContentVisibility = (show) => {
+  sharedContent.forEach((section) => {
+    section.hidden = !show;
+  });
+};
+
+const setMediaFollowupVisibility = (show) => {
+  mediaFollowups.forEach((section) => {
+    section.hidden = !show;
+  });
+};
+
+const activateProjectTab = (project, options = {}) => {
+  const { scroll = true } = options;
+  const activePanel = document.querySelector(`[data-project-panel="${project}"]`);
+
+  if (!activePanel) {
+    return;
+  }
+
+  productTabs.forEach((tab) => {
+    const isActive = tab.dataset.projectTab === project;
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+  });
+
+  productPanels.forEach((panel) => {
+    const isActive = panel.dataset.projectPanel === project;
+    panel.classList.toggle("is-active", isActive);
+    panel.hidden = !isActive;
+  });
+
+  if (project === "limer") {
+    window.requestAnimationFrame(refreshPhoneDots);
+  }
+
+  if (scroll) {
+    activePanel.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
+const showPortfolioView = (view, options = {}) => {
+  const { scroll = true, targetHash = "" } = options;
+  const isMedia = view === "media";
+  const isProduct = view === "product";
+
+  if (!isMedia && !isProduct) {
+    return;
+  }
+
+  document.body.classList.add("has-active-view");
+  document.body.dataset.activeView = view;
+
+  portfolioViews.forEach((portfolioView) => {
+    portfolioView.hidden = portfolioView.dataset.portfolioView !== view;
+  });
+
+  setSharedContentVisibility(true);
+  setMediaFollowupVisibility(isMedia);
+
+  viewTriggers.forEach((trigger) => {
+    const isActive = trigger.dataset.viewTrigger === view;
+    trigger.classList.toggle("is-active", isActive);
+    trigger.toggleAttribute("aria-current", isActive);
+  });
+
+  if (isProduct) {
+    activateProjectTab(projectHashMap[targetHash] || "limer", { scroll: false });
+  }
+
+  if (scroll) {
+    const target = targetHash ? document.querySelector(targetHash) : document.querySelector(isProduct ? "#product-projects" : "#reel");
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
+viewTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    showPortfolioView(trigger.dataset.viewTrigger);
+  });
+});
+
+productTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const panel = document.querySelector(`[data-project-panel="${tab.dataset.projectTab}"]`);
+
+    if (panel?.id) {
+      window.history.pushState(null, "", `#${panel.id}`);
+    }
+
+    showPortfolioView("product", { scroll: false });
+    activateProjectTab(tab.dataset.projectTab);
+  });
+});
+
+sharedLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    if (!document.body.dataset.activeView) {
+      event.preventDefault();
+      window.history.pushState(null, "", "#skills");
+      showPortfolioView("media", { targetHash: "#skills" });
+    }
+  });
+});
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest('a[href^="#"]');
+
+  if (!link) {
+    return;
+  }
+
+  const hash = link.getAttribute("href");
+
+  if (!hash || hash === "#top" || hash === "#skills") {
+    return;
+  }
+
+  if (productHashes.has(hash)) {
+    event.preventDefault();
+    window.history.pushState(null, "", hash);
+    showPortfolioView("product", { scroll: false, targetHash: hash });
+    activateProjectTab(projectHashMap[hash] || "limer", { scroll: hash !== "#product-projects" });
+
+    if (hash === "#product-projects") {
+      document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    return;
+  }
+
+  if (mediaHashes.has(hash)) {
+    event.preventDefault();
+    window.history.pushState(null, "", hash);
+    showPortfolioView("media", { targetHash: hash });
+  }
+});
+
+const scrollToHash = (hash) => {
+  window.requestAnimationFrame(() => {
+    document.querySelector(hash)?.scrollIntoView({ block: "start" });
+  });
+};
+
+const hydrateViewFromHash = () => {
+  const hash = window.location.hash;
+
+  if (productHashes.has(hash)) {
+    showPortfolioView("product", { scroll: false, targetHash: hash });
+    activateProjectTab(projectHashMap[hash] || "limer", { scroll: false });
+    scrollToHash(hash);
+    return;
+  }
+
+  if (mediaHashes.has(hash)) {
+    showPortfolioView("media", { scroll: false, targetHash: hash });
+    scrollToHash(hash);
+    return;
+  }
+
+  if (hash === "#skills") {
+    showPortfolioView("media", { scroll: false, targetHash: hash });
+    scrollToHash(hash);
+  }
+};
+
+hydrateViewFromHash();
+
+window.addEventListener("hashchange", hydrateViewFromHash);
 
 if (contactButton && contactModal) {
   const openContactModal = () => {
