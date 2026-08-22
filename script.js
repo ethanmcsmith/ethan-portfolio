@@ -101,7 +101,7 @@ if (contactButton && contactModal) {
   });
 }
 
-const proximityCards = document.querySelectorAll(".award-card, .note-card, .skill-card, .visual-card, .case-study-card, .case-mini-card, .case-step");
+const proximityCards = document.querySelectorAll(".award-card, .note-card, .skill-card, .visual-card, .case-mini-card, .case-panel, .decision-card, .case-step");
 const canAnimateCards = window.matchMedia("(hover: hover) and (pointer: fine)");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const proximityRadius = 210;
