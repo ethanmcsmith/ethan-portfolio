@@ -48,7 +48,7 @@
 
       <main id="top">
         <section class="hero section" aria-labelledby="hero-title">
-          <div class="hero-shell glass-panel gradient-border">
+          <div class="hero-shell">
             <p class="eyebrow">Filmmaker / Founder / Builder</p>
             <h1 id="hero-title">
               I build stories, systems, and digital experiences as a
@@ -66,10 +66,7 @@
         </section>
 
         <section class="section portfolio-strip" id="media" aria-labelledby="media-title">
-          <div class="section-bar glass-pill gradient-border">
-            <p class="eyebrow">Media Portfolio</p>
-            <h2 id="media-title">Film, Photography, And Visual Design.</h2>
-          </div>
+          <h2 class="sr-only" id="media-title">Film, Photography, And Visual Design.</h2>
           <div class="media-carousel carousel" data-carousel="media" aria-label="Media projects carousel">
             <article class="media-card carousel-card">
               <span class="project-badge">Reel</span>
@@ -114,10 +111,7 @@
         </section>
 
         <section class="section portfolio-strip" id="product" aria-labelledby="product-title">
-          <div class="section-bar glass-pill gradient-border">
-            <p class="eyebrow">Product Design & Development</p>
-            <h2 id="product-title">Apps, Websites, UX, And Case Studies.</h2>
-          </div>
+          <h2 class="sr-only" id="product-title">Apps, Websites, UX, And Case Studies.</h2>
           <div class="product-carousel-wrap">
             <button class="carousel-control" type="button" data-product-prev aria-label="Previous product project">‹</button>
             <div class="product-carousel carousel" data-carousel="product" aria-label="Product case study carousel">
@@ -170,6 +164,13 @@
                   chats, profile presence, and recap posts. The app combines UX writing, product architecture,
                   React Native implementation, Supabase data modeling, auth, storage, and iterative design.
                 </p>
+                <h4>Build Details</h4>
+                <ul class="case-list">
+                  <li>Structured core tabs for home feed, explore, event details, chat, and profile.</li>
+                  <li>Mapped club, event, RSVP, Bonfire recap, DM, group chat, and profile flows in Figma.</li>
+                  <li>Built with TypeScript, JavaScript, React Native, Supabase, PostgreSQL, auth, storage, REST APIs, Git, and Jira.</li>
+                  <li>Wrote onboarding guidance, error messaging, feature descriptions, and product voice guidelines.</li>
+                </ul>
                 <h4>What It Shows</h4>
                 <p>
                   Limer shows my ability to think like a founder and a builder at the same time: shape the
@@ -203,6 +204,14 @@
                   storytelling, staff tasks, and account actions. The prototype used real class names,
                   membership details, event imagery, brand colors, and responsive front-end logic.
                 </p>
+                <h4>Key Decisions</h4>
+                <ul class="case-list">
+                  <li>Separated main navigation from account actions so visitors could scan the site faster.</li>
+                  <li>Created a dynamic class hero that can support one, two, or three featured classes depending on the day.</li>
+                  <li>Used real class names, instructors, membership prices, event imagery, and community assets.</li>
+                  <li>Refined video overlays, logo treatments, header contrast, carousel controls, and mobile layouts through critique.</li>
+                  <li>Planned future flows for booking, member dashboards, trainer profiles, online membership purchase, and event registration.</li>
+                </ul>
                 <h4>What It Shows</h4>
                 <p>
                   This case study shows UI/UX iteration, information architecture, responsive design,
@@ -238,6 +247,15 @@
                   service education, mobile contact paths, trust signals, local SEO, and a clear inspection
                   request flow. The build was deployed through GitHub and Cloudflare Pages.
                 </p>
+                <h4>Key Decisions</h4>
+                <ul class="case-list">
+                  <li>Made WhatsApp, phone, and inspection request actions obvious for mobile and urgent users.</li>
+                  <li>Expanded service architecture across termite, general pest, marine, bird, mosquito, flea/tick, lawn, and sanitization services.</li>
+                  <li>Balanced conversion copy with trust details like training, insurance, warranties, follow-ups, and IPM practices.</li>
+                  <li>Clarified that free inspections apply in Trinidad only to prevent expectation gaps.</li>
+                  <li>Protected client privacy by replacing named clients with general client categories.</li>
+                  <li>Prepared local SEO direction, Google Business Profile copy, and Search Console considerations.</li>
+                </ul>
                 <h4>What It Shows</h4>
                 <p>
                   Flatline shows practical product thinking: interviewing a client, translating needs into
