@@ -6,22 +6,6 @@ const reelSources = [
   "assets/Ethan Smith´s Reel May 2026.mov",
 ];
 let reelSourceIndex = 0;
-const appScreen = document.querySelector(".app-screen");
-const phoneDots = document.querySelectorAll(".phone-dots span");
-const phonePrev = document.querySelector(".phone-control-prev");
-const phoneNext = document.querySelector(".phone-control-next");
-const viewTriggers = document.querySelectorAll("[data-view-trigger]");
-const portfolioViews = document.querySelectorAll("[data-portfolio-view]");
-const mediaFollowups = document.querySelectorAll(".media-followup");
-const sharedContent = document.querySelectorAll(".shared-content");
-const productTabs = document.querySelectorAll("[data-project-tab]");
-const productPanels = document.querySelectorAll("[data-project-panel]");
-const sharedLinks = document.querySelectorAll("[data-shared-link]");
-const contactButton = document.querySelector(".nav-cta");
-const contactModal = document.querySelector("#contact-modal");
-const contactCloseButtons = document.querySelectorAll("[data-contact-close]");
-let lastFocusedElement = null;
-let refreshPhoneDots = () => {};
 
 if (reel) {
   reel.src = reelSources[reelSourceIndex];
@@ -32,15 +16,12 @@ if (reel) {
 
   reel.addEventListener("loadedmetadata", () => {
     reel.style.display = "block";
-    if (placeholder) {
-      placeholder.style.display = "none";
-    }
+    placeholder?.setAttribute("hidden", "");
     reel.play().catch(() => {
-      if (placeholder) {
-        placeholder.style.display = "";
-      }
+      placeholder?.removeAttribute("hidden");
     });
   });
+
   reel.addEventListener("error", () => {
     reelSourceIndex += 1;
 
@@ -54,214 +35,155 @@ if (reel) {
   });
 }
 
-if (appScreen && phoneDots.length) {
-  refreshPhoneDots = () => {
-    if (!appScreen.clientWidth) {
+const flipWord = document.querySelector(".flip-word");
+const descriptors = ["filmmaker.", "founder.", "builder.", "designer.", "storyteller."];
+let descriptorIndex = 0;
+
+if (flipWord) {
+  window.setInterval(() => {
+    descriptorIndex = (descriptorIndex + 1) % descriptors.length;
+    flipWord.classList.remove("is-changing");
+
+    window.requestAnimationFrame(() => {
+      flipWord.textContent = descriptors[descriptorIndex];
+      flipWord.classList.add("is-changing");
+    });
+  }, 2600);
+}
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const mediaCarousel = document.querySelector('[data-carousel="media"]');
+const productCarousel = document.querySelector('[data-carousel="product"]');
+
+const updateCarouselDepth = (carousel) => {
+  if (!carousel) {
+    return;
+  }
+
+  const carouselCenter = carousel.getBoundingClientRect().left + carousel.clientWidth / 2;
+
+  carousel.querySelectorAll(".carousel-card").forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    const cardCenter = rect.left + rect.width / 2;
+    const distance = Math.abs(carouselCenter - cardCenter);
+    const strength = Math.max(0, 1 - distance / (carousel.clientWidth * 0.58));
+    const scale = 0.84 + strength * 0.18;
+    const opacity = 0.56 + strength * 0.44;
+
+    card.style.setProperty("--card-scale", scale.toFixed(3));
+    card.style.setProperty("--card-opacity", opacity.toFixed(3));
+  });
+};
+
+if (mediaCarousel) {
+  const originalCards = Array.from(mediaCarousel.children);
+
+  originalCards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    const clonedVideo = clone.querySelector(".reel-video");
+
+    if (clonedVideo) {
+      clonedVideo.src = reelSources[0];
+      clonedVideo.muted = true;
+      clonedVideo.loop = true;
+      clonedVideo.autoplay = true;
+      clonedVideo.playsInline = true;
+    }
+
+    clone.setAttribute("aria-hidden", "true");
+    mediaCarousel.appendChild(clone);
+  });
+
+  let mediaAnimationFrame = null;
+
+  const tickMediaCarousel = () => {
+    if (!reduceMotion.matches) {
+      mediaCarousel.scrollLeft += 0.45;
+
+      if (mediaCarousel.scrollLeft >= mediaCarousel.scrollWidth / 2) {
+        mediaCarousel.scrollLeft = 0;
+      }
+    }
+
+    updateCarouselDepth(mediaCarousel);
+    mediaAnimationFrame = window.requestAnimationFrame(tickMediaCarousel);
+  };
+
+  mediaCarousel.addEventListener("scroll", () => updateCarouselDepth(mediaCarousel), { passive: true });
+  mediaAnimationFrame = window.requestAnimationFrame(tickMediaCarousel);
+
+  window.addEventListener("beforeunload", () => {
+    window.cancelAnimationFrame(mediaAnimationFrame);
+  });
+}
+
+const productCards = document.querySelectorAll("[data-case-target]");
+const casePanels = document.querySelectorAll("[data-case-panel]");
+const productPrev = document.querySelector("[data-product-prev]");
+const productNext = document.querySelector("[data-product-next]");
+let activeCase = document.querySelector("[data-case-target].is-focused")?.dataset.caseTarget || "limer";
+
+const setActiveCase = (target, options = {}) => {
+  const { scrollCard = true } = options;
+  const nextPanel = document.querySelector(`[data-case-panel="${target}"]`);
+  const nextCard = document.querySelector(`[data-case-target="${target}"]`);
+
+  if (!nextPanel || !nextCard || activeCase === target) {
+    return;
+  }
+
+  activeCase = target;
+
+  productCards.forEach((card) => {
+    card.classList.toggle("is-focused", card.dataset.caseTarget === target);
+  });
+
+  casePanels.forEach((panel) => {
+    if (!panel.classList.contains("is-active")) {
+      panel.hidden = panel.dataset.casePanel !== target;
       return;
     }
 
-    const activeIndex = Math.round(appScreen.scrollLeft / appScreen.clientWidth);
+    panel.classList.add("is-fading");
+    window.setTimeout(() => {
+      panel.hidden = true;
+      panel.classList.remove("is-active", "is-fading");
+      nextPanel.hidden = false;
 
-    phoneDots.forEach((dot, index) => {
-      dot.classList.toggle("is-active", index === activeIndex);
-    });
-  };
+      window.requestAnimationFrame(() => {
+        nextPanel.classList.add("is-active");
+      });
+    }, 180);
+  });
 
-  const scrollPhone = (direction) => {
-    const activeIndex = Math.round(appScreen.scrollLeft / appScreen.clientWidth);
-    const nextIndex = (activeIndex + direction + phoneDots.length) % phoneDots.length;
+  if (scrollCard) {
+    nextCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }
 
-    appScreen.scrollTo({
-      left: nextIndex * appScreen.clientWidth,
-      behavior: "smooth",
-    });
-  };
-
-  appScreen.addEventListener("scroll", refreshPhoneDots, { passive: true });
-  phonePrev?.addEventListener("click", () => scrollPhone(-1));
-  phoneNext?.addEventListener("click", () => scrollPhone(1));
-  refreshPhoneDots();
-}
-
-const projectHashMap = {
-  "#limer": "limer",
-  "#case-study-496": "496",
-  "#case-process": "496",
-  "#case-study-flatline": "flatline",
-  "#flatline-decisions": "flatline",
+  updateCarouselDepth(productCarousel);
 };
 
-const mediaHashes = new Set(["#reel", "#awards", "#field-notes", "#visuals", "#reflections"]);
-const productHashes = new Set(["#product-projects", ...Object.keys(projectHashMap)]);
-
-const setSharedContentVisibility = (show) => {
-  sharedContent.forEach((section) => {
-    section.hidden = !show;
-  });
-};
-
-const setMediaFollowupVisibility = (show) => {
-  mediaFollowups.forEach((section) => {
-    section.hidden = !show;
-  });
-};
-
-const activateProjectTab = (project, options = {}) => {
-  const { scroll = true } = options;
-  const activePanel = document.querySelector(`[data-project-panel="${project}"]`);
-
-  if (!activePanel) {
-    return;
-  }
-
-  productTabs.forEach((tab) => {
-    const isActive = tab.dataset.projectTab === project;
-    tab.classList.toggle("is-active", isActive);
-    tab.setAttribute("aria-selected", String(isActive));
-  });
-
-  productPanels.forEach((panel) => {
-    const isActive = panel.dataset.projectPanel === project;
-    panel.classList.toggle("is-active", isActive);
-    panel.hidden = !isActive;
-  });
-
-  if (project === "limer") {
-    window.requestAnimationFrame(refreshPhoneDots);
-  }
-
-  if (scroll) {
-    activePanel.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-};
-
-const showPortfolioView = (view, options = {}) => {
-  const { scroll = true, targetHash = "" } = options;
-  const isMedia = view === "media";
-  const isProduct = view === "product";
-
-  if (!isMedia && !isProduct) {
-    return;
-  }
-
-  document.body.classList.add("has-active-view");
-  document.body.dataset.activeView = view;
-
-  portfolioViews.forEach((portfolioView) => {
-    portfolioView.hidden = portfolioView.dataset.portfolioView !== view;
-  });
-
-  setSharedContentVisibility(true);
-  setMediaFollowupVisibility(isMedia);
-
-  viewTriggers.forEach((trigger) => {
-    const isActive = trigger.dataset.viewTrigger === view;
-    trigger.classList.toggle("is-active", isActive);
-    trigger.toggleAttribute("aria-current", isActive);
-  });
-
-  if (isProduct) {
-    activateProjectTab(projectHashMap[targetHash] || "limer", { scroll: false });
-  }
-
-  if (scroll) {
-    const target = targetHash ? document.querySelector(targetHash) : document.querySelector(isProduct ? "#product-projects" : "#reel");
-    target?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-};
-
-viewTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    showPortfolioView(trigger.dataset.viewTrigger);
-  });
+productCards.forEach((card) => {
+  card.addEventListener("click", () => setActiveCase(card.dataset.caseTarget));
 });
 
-productTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const panel = document.querySelector(`[data-project-panel="${tab.dataset.projectTab}"]`);
-
-    if (panel?.id) {
-      window.history.pushState(null, "", `#${panel.id}`);
-    }
-
-    showPortfolioView("product", { scroll: false });
-    activateProjectTab(tab.dataset.projectTab);
-  });
-});
-
-sharedLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    if (!document.body.dataset.activeView) {
-      event.preventDefault();
-      window.history.pushState(null, "", "#skills");
-      showPortfolioView("media", { targetHash: "#skills" });
-    }
-  });
-});
-
-document.addEventListener("click", (event) => {
-  const link = event.target.closest('a[href^="#"]');
-
-  if (!link) {
-    return;
-  }
-
-  const hash = link.getAttribute("href");
-
-  if (!hash || hash === "#top" || hash === "#skills") {
-    return;
-  }
-
-  if (productHashes.has(hash)) {
-    event.preventDefault();
-    window.history.pushState(null, "", hash);
-    showPortfolioView("product", { scroll: false, targetHash: hash });
-    activateProjectTab(projectHashMap[hash] || "limer", { scroll: hash !== "#product-projects" });
-
-    if (hash === "#product-projects") {
-      document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    return;
-  }
-
-  if (mediaHashes.has(hash)) {
-    event.preventDefault();
-    window.history.pushState(null, "", hash);
-    showPortfolioView("media", { targetHash: hash });
-  }
-});
-
-const scrollToHash = (hash) => {
-  window.requestAnimationFrame(() => {
-    document.querySelector(hash)?.scrollIntoView({ block: "start" });
-  });
+const stepProduct = (direction) => {
+  const cards = Array.from(productCards);
+  const index = cards.findIndex((card) => card.dataset.caseTarget === activeCase);
+  const nextIndex = (index + direction + cards.length) % cards.length;
+  setActiveCase(cards[nextIndex].dataset.caseTarget);
 };
 
-const hydrateViewFromHash = () => {
-  const hash = window.location.hash;
+productPrev?.addEventListener("click", () => stepProduct(-1));
+productNext?.addEventListener("click", () => stepProduct(1));
 
-  if (productHashes.has(hash)) {
-    showPortfolioView("product", { scroll: false, targetHash: hash });
-    activateProjectTab(projectHashMap[hash] || "limer", { scroll: false });
-    scrollToHash(hash);
-    return;
-  }
+productCarousel?.addEventListener("scroll", () => updateCarouselDepth(productCarousel), { passive: true });
+updateCarouselDepth(productCarousel);
 
-  if (mediaHashes.has(hash)) {
-    showPortfolioView("media", { scroll: false, targetHash: hash });
-    scrollToHash(hash);
-    return;
-  }
-
-  if (hash === "#skills") {
-    showPortfolioView("media", { scroll: false, targetHash: hash });
-    scrollToHash(hash);
-  }
-};
-
-hydrateViewFromHash();
-
-window.addEventListener("hashchange", hydrateViewFromHash);
+const contactButton = document.querySelector(".nav-cta");
+const contactModal = document.querySelector("#contact-modal");
+const contactCloseButtons = document.querySelectorAll("[data-contact-close]");
+let lastFocusedElement = null;
 
 if (contactButton && contactModal) {
   const openContactModal = () => {
@@ -293,72 +215,7 @@ if (contactButton && contactModal) {
   });
 }
 
-const proximityCards = document.querySelectorAll(".award-card, .note-card, .skill-card, .visual-card, .case-mini-card, .case-panel, .decision-card, .case-step, .service-architecture-grid article");
-const canAnimateCards = window.matchMedia("(hover: hover) and (pointer: fine)");
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const proximityRadius = 210;
-let pointerPosition = null;
-let cardAnimationFrame = null;
-
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-
-const resetProximityCard = (card) => {
-  card.classList.remove("is-near");
-  card.style.setProperty("--card-rotate-x", "0deg");
-  card.style.setProperty("--card-rotate-y", "0deg");
-  card.style.setProperty("--card-lift", "0px");
-};
-
-const updateProximityCards = () => {
-  cardAnimationFrame = null;
-
-  proximityCards.forEach((card) => {
-    if (!pointerPosition) {
-      resetProximityCard(card);
-      return;
-    }
-
-    const rect = card.getBoundingClientRect();
-    const nearestX = clamp(pointerPosition.x, rect.left, rect.right);
-    const nearestY = clamp(pointerPosition.y, rect.top, rect.bottom);
-    const distance = Math.hypot(pointerPosition.x - nearestX, pointerPosition.y - nearestY);
-    const strength = clamp(1 - distance / proximityRadius, 0, 1);
-
-    if (!strength) {
-      resetProximityCard(card);
-      return;
-    }
-
-    const x = clamp((pointerPosition.x - (rect.left + rect.width / 2)) / (rect.width / 2), -1, 1);
-    const y = clamp((pointerPosition.y - (rect.top + rect.height / 2)) / (rect.height / 2), -1, 1);
-
-    card.classList.add("is-near");
-    card.style.setProperty("--card-rotate-x", `${(-y * strength * 4).toFixed(2)}deg`);
-    card.style.setProperty("--card-rotate-y", `${(x * strength * 4).toFixed(2)}deg`);
-    card.style.setProperty("--card-lift", `${(-strength * 4).toFixed(2)}px`);
-  });
-};
-
-const queueProximityCardsUpdate = () => {
-  if (!cardAnimationFrame) {
-    cardAnimationFrame = window.requestAnimationFrame(updateProximityCards);
-  }
-};
-
-if (proximityCards.length && canAnimateCards.matches && !reduceMotion.matches) {
-  proximityCards.forEach((card) => {
-    card.classList.add("proximity-card");
-  });
-
-  document.addEventListener("pointermove", (event) => {
-    pointerPosition = { x: event.clientX, y: event.clientY };
-    queueProximityCardsUpdate();
-  }, { passive: true });
-
-  document.addEventListener("pointerleave", () => {
-    pointerPosition = null;
-    queueProximityCardsUpdate();
-  });
-
-  document.addEventListener("scroll", queueProximityCardsUpdate, { passive: true });
-}
+window.addEventListener("resize", () => {
+  updateCarouselDepth(mediaCarousel);
+  updateCarouselDepth(productCarousel);
+});

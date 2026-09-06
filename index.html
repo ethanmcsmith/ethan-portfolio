@@ -6,1284 +6,349 @@
     <title>Ethan Smith | Portfolio</title>
     <meta
       name="description"
-      content="A portfolio for Ethan Smith featuring film work, visual design, app development, UI/UX case studies, and creative leadership."
+      content="Ethan Smith's portfolio across film, photography, visual design, product design, web development, UX, leadership, and creative strategy."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <header class="topbar" aria-label="Primary navigation">
-        <a class="brand" href="#top" aria-label="Ethan Smith home">
+        <a class="brand glass-pill gradient-border" href="#top" aria-label="Ethan Smith home">
           <span class="brand-mark"></span>
           <span class="brand-name">Ethan Smith</span>
           <span class="brand-divider" aria-hidden="true"></span>
-          <span class="brand-tagline">Filmmaker • Founder • Builder</span>
+          <span class="brand-tagline">Portfolio</span>
         </a>
-        <nav>
-          <button type="button" data-view-trigger="media">Media</button>
-          <button type="button" data-view-trigger="product">Product Design</button>
-          <a href="#skills" data-shared-link>Skills</a>
+        <nav class="glass-pill gradient-border">
+          <a href="#media">Media</a>
+          <a href="#product">Product</a>
+          <a href="#background">Background</a>
+          <a href="#contact">Contact</a>
         </nav>
-        <button class="nav-cta" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="contact-modal">
+        <button class="nav-cta glass-pill gradient-border" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="contact-modal">
           Contact
         </button>
       </header>
 
       <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title" hidden>
         <button class="contact-backdrop" type="button" data-contact-close aria-label="Close contact dialog"></button>
-        <div class="contact-dialog">
-          <button class="contact-close" type="button" data-contact-close aria-label="Close contact dialog">×</button>
+        <div class="contact-dialog glass-panel gradient-border">
+          <button class="contact-close" type="button" data-contact-close aria-label="Close contact dialog">x</button>
           <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Let’s Make Something.</h2>
+          <h2 id="contact-title">Let's Make Something.</h2>
           <div class="contact-list">
-            <a href="mailto:ethanmcsmith@gmail.com">
-              <span>Email</span>
-              ethanmcsmith@gmail.com
-            </a>
-            <a href="tel:+14055015748">
-              <span>Phone</span>
-              (405) 501-5748
-            </a>
-            <a href="https://www.instagram.com/e_smith7/" target="_blank" rel="noreferrer">
-              <span>Instagram</span>
-              @e_smith7
-            </a>
-            <a href="https://www.linkedin.com/in/ethan-smith-18447122a/" target="_blank" rel="noreferrer">
-              <span>LinkedIn</span>
-              Ethan Smith
-            </a>
+            <a href="mailto:ethanmcsmith@gmail.com"><span>Email</span>ethanmcsmith@gmail.com</a>
+            <a href="tel:+14055015748"><span>Phone</span>(405) 501-5748</a>
+            <a href="assets/EthanMCSmith Resume.pdf" download><span>Resume</span>Download PDF</a>
+            <a href="https://www.instagram.com/e_smith7/" target="_blank" rel="noreferrer"><span>Instagram</span>@e_smith7</a>
+            <a href="https://www.linkedin.com/in/ethan-smith-18447122a/" target="_blank" rel="noreferrer"><span>LinkedIn</span>Ethan Smith</a>
           </div>
         </div>
       </div>
 
       <main id="top">
-        <section class="path-gateway" id="gateway" aria-labelledby="gateway-title">
-          <div class="gateway-copy">
-            <p class="eyebrow">Choose A Portfolio Path</p>
-            <h1 id="gateway-title">Which side of Ethan's work do you want to enter?</h1>
-          </div>
-          <div class="gateway-options">
-            <button class="gateway-card media-card" type="button" data-view-trigger="media">
-              <span>Media Portfolio</span>
-              <strong>Film, reel work, photography, visual design, and creative reflections.</strong>
-            </button>
-            <button class="gateway-card product-card" type="button" data-view-trigger="product">
-              <span>Product Design & Development</span>
-              <strong>Apps, websites, UX case studies, content strategy, and shipped digital experiences.</strong>
-            </button>
-          </div>
-        </section>
-
-        <div class="portfolio-view media-view" data-portfolio-view="media" hidden>
-        <section class="hero section" id="reel" aria-labelledby="hero-title">
-          <div class="ambient ambient-one"></div>
-          <div class="ambient ambient-two"></div>
-          <div class="hero-grid">
-            <div class="reel-card" aria-label="Portfolio reel preview">
-              <div class="reel-frame">
-                <video
-                  class="reel-video"
-                  poster=""
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                  preload="auto"
-                  aria-label="Personal reel video"
-                ></video>
-                <div class="reel-placeholder" aria-hidden="true"></div>
-                <div class="scanline"></div>
-              </div>
-              <div class="reel-meta">
-                <span>Ethan Smith Production Reel</span>
-                <span>Looping cut</span>
-              </div>
-            </div>
-
-            <div class="hero-copy">
-              <div class="hero-text">
-                <h1 id="hero-title">Welcome to the Mind of Ethan Smith</h1>
-                <p class="hero-lede">
-                  In everything he does, Ethan Smith tells a story. He is a filmmaker, a software engineer, an artist in both, and a maker of moments. 
-                  The goal of this young man is to be a source of fond "forever memories" in the lives of others.
-                </p>
-                <div class="hero-actions">
-                  <a class="button secondary" href="#limer">Enter Ethan's Logic</a>
-                  <a class="button primary" href="#field-notes">Enter Ethan's Imagination</a>
-                </div>
-              </div>
-              <a class="hero-portrait" href="#skills" aria-label="Go to Ethan Smith skills section">
-                <img class="hero-head" src="assets/ethanHead.png" alt="Ethan Smith" />
-                <img class="hero-brain" src="assets/ethanBrain.png" alt="" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section class="section awards" id="awards" aria-labelledby="awards-title">
-          <div class="section-heading">
-            <p class="eyebrow">Recognition</p>
-            <h2 id="awards-title">Awards Received Along The Way.</h2>
-          </div>
-          <div class="award-grid">
-            <article class="award-card featured">
-              <div class="award-logo-row">
-                <div class="award-logo award-logo-bea">
-                  <img src="assets/BEABlack.png" alt="Broadcast Education Association logo" />
-                </div>
-                <img class="award-laurels" src="assets/laurels.png" alt="Award laurels" />
-              </div>
-              <span class="award-year">2025</span>
-              <h3>BEA Award of Excellence in Scriptwriting</h3>
-              <p>In February 2025, Ethan Smith was the recipient of the Broadcast Education Association (BEA) Award of Excellence in Scriptwriting 
-                 for his original short film script, <em>Earl's Portrait</em> (2024).</p>
-            </article>
-            <article class="award-card">
-              <div class="award-logo award-logo-deadcenter">
-                <img src="assets/deadCenter.png" alt="deadCenter Film logo" />
-              </div>
-              <span class="award-year">2026</span>
-              <h3>deadCenter Film Education Scriptwriting Finalist</h3>
-              <p>In March 2026, Ethan Smith's <em>The Civilizing Effect</em> (2026),  
-                 was selected as a finalist in the deadCenter Film Education Writer's Room competition.</p>
-            </article>
-            <article class="award-card">
-              <div class="award-logo award-logo-uwc">
-                <img src="assets/uwc.png" alt="United World Colleges logo" />
-              </div>
-              <span class="award-year">Since 2022</span>
-              <h3>United World College Scholar</h3>
-              <p>In August 2022, Ethan Smith became a member of the United World Scholars Program, 
-                 studying at the University of Oklahoma on a full scholarship 
-                 from the Shelby Davis Foundation.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section notes" id="field-notes" aria-labelledby="notes-title">
-          <div class="section-heading film-heading">
-            <p class="eyebrow">Filmography</p>
-            <h2 id="notes-title">The Mind That Brought You...</h2>
-          </div>
-          <div class="notes-grid">
-            <article class="note-card">
-              <div class="note-image film-preview">
-                <video
-                  poster="assets/SteelHeartsThumbnail.png"
-                  controls
-                  preload="none"
-                  playsinline
-                  aria-label="Steel Hearts short film preview"
-                >
-                  <source
-                    src="https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/Steel%20Hearts%20Compressed.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-              <div class="note-body">
-                <p class="note-kicker">Short Film • 2026</p>
-                <h3>Steel Hearts</h3>
-                <p class="note-role">Executive Producer, Script Supervisor, 1st Assistant Director & 2nd Assistant Camera</p>
-                <p>
-                  On opposite sides of a covert war, two elite operatives with a history of betrayal
-                  and attraction cross paths during a warehouse heist, where old wounds and buried
-                  feelings threaten to ruin the mission.
-                </p>
-              </div>
-            </article>
-            <article class="note-card">
-              <div class="note-image film-preview">
-                <video
-                  poster="assets/TheCivilizingEffectThumbnail2.png"
-                  controls
-                  preload="none"
-                  playsinline
-                  aria-label="The Civilizing Effect short film preview"
-                >
-                  <source
-                    src="https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/The%20Civilizing%20Effect%20H264.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-              <div class="note-body">
-                <p class="note-kicker">Short Film • 2026</p>
-                <h3>The Civilizing Effect</h3>
-                <p class="note-role">Writer, Script Supervisor & 1st Assistant Camera</p>
-                <p>
-                  A scientist tests a new behavioral chip on his android assistant. As the system begins
-                  rewarding ruthless efficiency over empathy, the experiment reveals how easily identity
-                  can be reshaped by a system's incentives.
-                </p>
-              </div>
-            </article>
-            <article class="note-card">
-              <div class="note-image film-preview">
-                <video
-                  poster="assets/TheTalkingStageThumbnail.png"
-                  controls
-                  preload="none"
-                  playsinline
-                  aria-label="The Talking Stage short film preview"
-                >
-                  <source
-                    src="https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/The%20Talking%20Stage%20Compressed.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-              <div class="note-body">
-                <p class="note-kicker">Short Film • 2024</p>
-                <h3>The Talking Stage</h3>
-                <p class="note-role">Writer, Director, Cinematographer, Actor & Editor</p>
-                <p>
-                  An artsy girl with a promiscuous reputation and a smooth, outgoing rapper take their
-                  budding romance through the talking stage.
-                </p>
-              </div>
-            </article>
-            <article class="note-card">
-              <div class="note-image film-preview">
-                <video
-                  poster="assets/NailsThumbnail.png"
-                  controls
-                  preload="none"
-                  playsinline
-                  aria-label="Nails short film preview"
-                >
-                  <source
-                    src="https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/Nails%20%282023%29.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-              <div class="note-body">
-                <p class="note-kicker">Short Film • 2023</p>
-                <h3>Nails</h3>
-                <p class="note-role">Writer & Set Designer</p>
-                <p>
-                  After a flat tire strands him near an isolated old house, a nervous traveler accepts
-                  dinner from its unsettling occupant and slowly realizes the accident may have been a trap.
-                </p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section visuals" id="visuals" aria-labelledby="visuals-title">
-          <div class="section-heading visuals-heading">
-            <p class="eyebrow">Photography & Design</p>
-            <h2 id="visuals-title">Visuals.</h2>
-          </div>
-          <div class="visuals-showcase">
-            <article class="visual-feature-card">
-              <div class="visual-feature-image">
-                <img
-                  src="assets/nabj-group.jpg"
-                  alt="OU NABJ executive team group portrait"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="visual-feature-copy">
-                <p class="note-kicker">NABJ Executive Team Photoshoot Collection • 2025</p>
-                <h3>National Association of Black Journalists</h3>
-                <p>
-                  A campaign-style executive team shoot created for OU NABJ, built around editorial cover
-                  design, press-room staging, and a bold magazine treatment. I served as creative director,
-                  photographer for the team portraits except my own, and editor/designer for the final graphics.
-                </p>
-              </div>
-            </article>
-            <div class="visual-grid" aria-label="NABJ executive team graphic design collection">
-              <article class="visual-card">
-                <img src="assets/nabj-aryanna.jpg" alt="Aryanna Smith NABJ secretary editorial cover" loading="lazy" decoding="async" />
-                <div class="visual-card-copy">
-                  <span>Secretary</span>
-                  <h3>Aryanna Smith</h3>
-                </div>
-              </article>
-              <article class="visual-card">
-                <img src="assets/nabj-ethan.jpg" alt="Ethan Smith NABJ president editorial cover" loading="lazy" decoding="async" />
-                <div class="visual-card-copy">
-                  <span>President</span>
-                  <h3>Ethan Smith</h3>
-                </div>
-              </article>
-              <article class="visual-card">
-                <img src="assets/nabj-lauren.jpg" alt="Lauren Boone NABJ public relations chair editorial cover" loading="lazy" decoding="async" />
-                <div class="visual-card-copy">
-                  <span>Public Relations Chair</span>
-                  <h3>Lauren Boone</h3>
-                </div>
-              </article>
-              <article class="visual-card">
-                <img src="assets/nabj-raegan.jpg" alt="Raegan Garvin NABJ social media chair editorial cover" loading="lazy" decoding="async" />
-                <div class="visual-card-copy">
-                  <span>Social Media Chair</span>
-                  <h3>Raegan Garvin</h3>
-                </div>
-              </article>
-              <article class="visual-card">
-                <img src="assets/nabj-ryan.jpg" alt="Ryan Whitaker NABJ treasurer editorial cover" loading="lazy" decoding="async" />
-                <div class="visual-card-copy">
-                  <span>Treasurer</span>
-                  <h3>Ryan Whitaker</h3>
-                </div>
-              </article>
-              <article class="visual-card">
-                <img src="assets/nabj-tanae.jpg" alt="Tanae Fletcher NABJ vice president editorial cover" loading="lazy" decoding="async" />
-                <div class="visual-card-copy">
-                  <span>Vice President</span>
-                  <h3>Tanae Fletcher</h3>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-        </div>
-
-        <div class="portfolio-view product-view" data-portfolio-view="product" hidden>
-        <section class="section product-overview" id="product-projects" aria-labelledby="product-title">
-          <div class="section-heading">
-            <p class="eyebrow">Product Design & Development</p>
-            <h2 id="product-title">Digital Work With A User On The Other Side.</h2>
-          </div>
-          <p>
-            These projects combine web and app development, UI/UX design, content strategy, stakeholder
-            thinking, and product decisions. Choose a project to go deeper.
-          </p>
-          <div class="product-tablist" role="tablist" aria-label="Product design and development projects">
-            <button class="product-tab is-active" id="tab-limer" type="button" role="tab" aria-selected="true" aria-controls="limer" data-project-tab="limer">
-              <img src="assets/LimerLogo.png" alt="" aria-hidden="true" />
-              <span>Limer</span>
-            </button>
-            <button class="product-tab" id="tab-496" type="button" role="tab" aria-selected="false" aria-controls="case-study-496" data-project-tab="496">
-              <img src="assets/case-496-logo.png" alt="" aria-hidden="true" />
-              <span>496 Gym</span>
-            </button>
-            <button class="product-tab" id="tab-flatline" type="button" role="tab" aria-selected="false" aria-controls="case-study-flatline" data-project-tab="flatline">
-              <img src="assets/case-flatline-logo.png" alt="" aria-hidden="true" />
-              <span>Flatline</span>
-            </button>
-          </div>
-        </section>
-
-        <section class="section limer product-project-panel is-active" id="limer" aria-labelledby="limer-title" role="tabpanel" data-project-panel="limer">
-          <div class="phone-stage">
-            <div class="phone">
-              <div class="phone-top" aria-hidden="true"></div>
-              <div class="app-screen" aria-label="Scrollable Limer app screenshots" tabindex="0">
-                <img src="assets/LimerHomeFeedPage.PNG" alt="Limer home feed tab" />
-                <img src="assets/LimerExplorePage.PNG" alt="Limer explore tab" />
-                <img src="assets/LimerEventPage.PNG" alt="Limer event tab" />
-                <img src="assets/LimerChatPage.PNG" alt="Limer chat tab" />
-                <img src="assets/LimerProfilePage.PNG" alt="Limer profile tab" />
-              </div>
-              <div class="phone-dots" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-            <button class="phone-control phone-control-prev" type="button" aria-label="Previous Limer tab">
-              <span aria-hidden="true">‹</span>
-            </button>
-            <button class="phone-control phone-control-next" type="button" aria-label="Next Limer tab">
-              <span aria-hidden="true">›</span>
-            </button>
-          </div>
-          <div class="limer-copy">
-            <p class="eyebrow">Full Stack App Development</p>
-            <div class="limer-title-row">
-              <img class="limer-logo" src="assets/LimerLogo.png" alt="Limer logo" />
-              <h2 id="limer-title">Limer - The College Connector</h2>
-            </div>
+        <section class="hero section" aria-labelledby="hero-title">
+          <div class="hero-shell glass-panel gradient-border">
+            <p class="eyebrow">Filmmaker / Founder / Builder</p>
+            <h1 id="hero-title">
+              I build stories, systems, and digital experiences as a
+              <span class="flip-word" aria-live="polite">filmmaker.</span>
+            </h1>
             <p>
-              Limer is the social app I’m building for the college experience, where clubs, events, and group chats actually connect instead of living in separate places. You can discover what’s happening, see who’s going, post a recap, and keep the conversation moving without it turning into another dead group chat. It’s built around one idea, make it easier to meet people in real life, and make campus feel smaller in a good way.
+              I move between production sets, design systems, startup ideas, and code with the same goal:
+              make things that feel useful, memorable, and human.
             </p>
-            <div class="feature-list">
-              <div>
-                <span>01</span>
-                <p>Browse clubs and events, RSVP & stop guessing where everyone’s going.</p>
-              </div>
-              <div>
-                <span>02</span>
-                <p>Share memories at the Bonfire & tag the event so it's tied to a real moment.</p>
-              </div>
-              <div>
-                <span>03</span>
-                <p>Make plans in DMs, group chats & club chats with QuickReply built in.</p>
-              </div>
-            </div>
-            <div class="coding-actions">
-              <span class="button primary launch-badge">Launching Sept. 2026</span>
-              <a class="button secondary" href="#case-study-496">View 496 Case Study</a>
-              <a class="button secondary" href="#case-study-flatline">View Flatline Case Study</a>
+            <div class="hero-actions">
+              <a class="button primary" href="#media">View Media Work</a>
+              <a class="button secondary" href="#product">View Product Work</a>
             </div>
           </div>
         </section>
 
-        <section class="section case-study product-project-panel" id="case-study-496" aria-labelledby="case-496-title" role="tabpanel" data-project-panel="496" hidden>
-          <div class="case-hero">
-            <div class="case-hero-copy">
-              <p class="eyebrow">Product Case Study</p>
-              <h2 id="case-496-title">496 Gym Digital Experience</h2>
-              <p>
-                A responsive concept website for a local gym, designed to translate 496 Gym's real-world
-                energy, class schedule, memberships, and community into a polished digital experience.
-              </p>
-              <div class="case-tags" aria-label="496 Gym project tags">
-                <span>Responsive Design</span>
-                <span>Brand System</span>
-                <span>UX Iteration</span>
-                <span>Content Strategy</span>
-                <span>Interactive Prototype</span>
-                <span>Local Business</span>
+        <section class="section portfolio-strip" id="media" aria-labelledby="media-title">
+          <div class="section-bar glass-pill gradient-border">
+            <p class="eyebrow">Media Portfolio</p>
+            <h2 id="media-title">Film, Photography, And Visual Design.</h2>
+          </div>
+          <div class="media-carousel carousel" data-carousel="media" aria-label="Media projects carousel">
+            <article class="media-card carousel-card">
+              <span class="project-badge">Reel</span>
+              <div class="media-thumb reel-thumb">
+                <video class="reel-video" autoplay loop muted playsinline preload="auto" aria-label="Ethan Smith production reel"></video>
+                <div class="reel-placeholder" aria-hidden="true"></div>
               </div>
-              <div class="case-actions">
-                <span class="button primary launch-badge">View Live Prototype</span>
-                <a class="button secondary" href="#case-process">Process Breakdown</a>
-              </div>
-            </div>
-            <div class="browser-mockup" aria-label="496 Gym homepage preview placeholder">
-              <div class="browser-bar" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-                <p>496gym.local</p>
-              </div>
-              <div class="browser-preview">
-                <img class="case-logo-mark" src="assets/case-496-logo.png" alt="496 Gym logo" loading="lazy" decoding="async" />
-                <p>Homepage hero screenshot</p>
-                <strong>Replace this preview with a final 496 Gym homepage screenshot.</strong>
-              </div>
-              <div class="browser-thumb-grid" aria-hidden="true">
-                <span>Class schedule screenshot</span>
-                <span>Community carousel screenshot</span>
-                <span>Membership page screenshot</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="case-meta-grid">
-            <article class="case-mini-card">
-              <span>Role</span>
-              <p>Frontend Developer, UI/UX Designer, Content Designer, Product Thinker.</p>
+              <h3>Ethan Smith Production Reel</h3>
+              <p>Looping cut of production, directing, camera, and editing work.</p>
             </article>
-            <article class="case-mini-card">
-              <span>Project Type</span>
-              <p>Family business website concept and local gym digital experience.</p>
+            <article class="media-card carousel-card">
+              <span class="project-badge">Short Film</span>
+              <img src="assets/SteelHeartsThumbnail.png" alt="Steel Hearts thumbnail" loading="lazy" decoding="async" />
+              <h3>Steel Hearts</h3>
+              <p>Executive Producer, Script Supervisor, 1st AD, and 2nd AC.</p>
             </article>
-            <article class="case-mini-card">
-              <span>Duration</span>
-              <p>August 2026.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Tools</span>
-              <p>HTML, CSS, JavaScript, Cursor/Codex, AI-assisted iteration, custom brand assets, video, and image media.</p>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Overview</p>
-              <h3>More than a website I coded.</h3>
-              <p>
-                496 Gym needed a modern digital experience that could communicate its identity as a premium
-                24-hour fitness and wellness destination in Valpark. The project began with notes from the
-                existing website, real gym assets, membership information, class schedules, logo files, and
-                class/event media. From there, I designed and developed a responsive prototype focused on
-                visual energy, clear navigation, accurate class information, membership discovery, and
-                community storytelling.
-              </p>
-              <p>
-                The project evolved through many rounds of critique and refinement, including header behavior,
-                logo treatment, class video layouts, dynamic class scheduling, community carousel design,
-                color systems, typography, and section structure.
-              </p>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">The Problem</p>
-              <h3>Capturing the gym's real-world energy.</h3>
-              <p>
-                The existing gym website did not fully reflect the energy, professionalism, and community feel
-                of 496 Gym. It needed a stronger first impression, clearer membership and class information,
-                and a more engaging way to showcase what makes the gym active and local.
-              </p>
-              <ul class="case-list">
-                <li>Class schedule and membership info needed to be accurate and easy to understand.</li>
-                <li>The experience needed to support visitors, members, staff, and older users.</li>
-                <li>Visual assets needed to feel intentional, not like placeholders.</li>
-                <li>Bold motion and video needed to stay readable.</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Goals</p>
-            <h3>The site needed to help people understand what 496 offers and feel the vibe quickly.</h3>
-          </div>
-          <div class="case-goal-grid">
-            <span>Clarify class and membership information</span>
-            <span>Create a strong branded first impression</span>
-            <span>Make the homepage feel energetic and premium</span>
-            <span>Use real gym colors, logo, schedule, and media</span>
-            <span>Improve navigation across classes, memberships, events, schedule, store, and staff tasks</span>
-            <span>Show community through real event imagery</span>
-            <span>Create a scalable design system for future pages</span>
-            <span>Support future owner-approved marketing copy</span>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Inputs</p>
-            <h3>Real requirements, not just vibes.</h3>
-          </div>
-          <div class="case-input-grid">
-            <article class="case-panel">
-              <h3>Starting Inputs</h3>
-              <ul class="case-list">
-                <li>Existing 496 Gym website review and notes</li>
-                <li>AI-assisted build brief and iterative critique</li>
-                <li>Official logo assets and blue/white/black brand colors</li>
-                <li>Real weekly class schedule and instructor names</li>
-                <li>Membership package sheet and event/community imagery</li>
-              </ul>
-            </article>
-            <article class="case-panel">
-              <h3>Classes & Memberships</h3>
-              <ul class="case-list">
-                <li>Yoga with Kara, Abs with Kimorie, Strength and Abs with Wendy</li>
-                <li>Spin with Wendy, Aerobics with Paul, Pilates with Nissa</li>
-                <li>Standard $450/month, Student/Senior $350/month</li>
-                <li>Corporate $300/month, Group $400/month, Day Pass $60/day</li>
-              </ul>
-            </article>
-            <article class="case-panel case-media-panel">
-              <img src="assets/case-496-team.jpg" alt="496 Gym team image used for community storytelling" loading="lazy" decoding="async" />
-            </article>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Audience</p>
-            <h3>Designing for different user mindsets.</h3>
-          </div>
-          <div class="persona-grid">
-            <article class="case-mini-card">
-              <span>Prospective Member</span>
-              <p>Needs pricing, available classes, confidence that the gym is active, and quick join/sign-in actions.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Current Member</span>
-              <p>Needs today's classes, schedule access, membership/profile tools, and upcoming community events.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Staff/Admin Demo User</span>
-              <p>Needs staff task access, clear profile states, and member/staff flows separated from main navigation.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Older Visitor</span>
-              <p>Needs familiar UI patterns, readable buttons, clear navigation, and obvious carousel controls.</p>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Information Architecture</p>
-              <h3>Separating destinations from account actions.</h3>
-              <div class="sitemap-grid" aria-label="496 Gym prototype sitemap">
-                <span>Home</span>
-                <span>Membership</span>
-                <span>Events</span>
-                <span>Classes</span>
-                <span>Schedule</span>
-                <span>Store</span>
-                <span>Staff Task List</span>
-                <span>Profile Mini Menu</span>
-              </div>
-              <p>
-                Membership, Events, Classes, Schedule, Store, and Staff Task List became the main navigation
-                group, while Join Now and the profile mini menu were right-aligned as account-oriented actions.
-              </p>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">Brand & Visual Direction</p>
-              <h3>Energetic, premium, local, and readable.</h3>
-              <p>
-                The visual direction was rebuilt around the official blue/white/black logo colors. I tested
-                multiple logo files, cleaned up unwanted white-corner artifacts, and used athletic typography
-                to make the prototype feel bold without becoming gloomy.
-              </p>
-              <div class="design-system-strip" aria-label="496 Gym design system samples">
-                <span class="swatch gym-blue">Gym Blue</span>
-                <span class="swatch gym-black">Black</span>
-                <span class="swatch gym-white">White</span>
-                <span class="swatch yoga">Yoga</span>
-                <span class="swatch abs">Abs</span>
-                <span class="swatch spin">Spin</span>
-                <span class="swatch pilates">Pilates</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="case-section-heading" id="case-process">
-            <p class="eyebrow">Key UX/UI Decisions</p>
-            <h3>Problem, decision, and why it mattered.</h3>
-          </div>
-          <div class="decision-grid">
-            <article class="decision-card">
-              <span>Header Navigation System</span>
-              <h3>Problem</h3>
-              <p>The header felt cramped and account actions were mixed with main navigation.</p>
-              <h3>Decision</h3>
-              <p>Separated primary navigation from account actions, right-aligned Join Now and the profile menu, and created a frosted pill navigation bar.</p>
-              <h3>Why It Mattered</h3>
-              <p>Improved hierarchy and made the header easier to scan.</p>
-            </article>
-            <article class="decision-card">
-              <span>Featured Classes Hero</span>
-              <h3>Problem</h3>
-              <p>The homepage originally featured one class, but some days include multiple classes.</p>
-              <h3>Decision</h3>
-              <p>Built a dynamic hero that splits into one, two, or three equal video panels based on the day's schedule.</p>
-              <h3>Why It Mattered</h3>
-              <p>The homepage now reflects the actual day at the gym and gives equal visual weight to multiple classes.</p>
-            </article>
-            <article class="decision-card">
-              <span>Video Readability</span>
-              <h3>Problem</h3>
-              <p>Text over video needed readability, but heavy overlays made the page feel gloomy.</p>
-              <h3>Decision</h3>
-              <p>Tested dark filters, class-colored overlays, blue gradients, blur treatments, and simpler contrast layers.</p>
-              <h3>Why It Mattered</h3>
-              <p>The final direction preserved visual energy while keeping text usable.</p>
-            </article>
-            <article class="decision-card">
-              <span>Community Carousel</span>
-              <h3>Problem</h3>
-              <p>The gym's community aspect needed stronger storytelling.</p>
-              <h3>Decision</h3>
-              <p>Created a focused event carousel with real event posts, visible adjacent cards, date bubbles, and arrow controls.</p>
-              <h3>Why It Mattered</h3>
-              <p>It communicated ongoing local activity and made 496 feel like a community brand, not only a workout space.</p>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Content Design</p>
-              <h3>Structuring the language as much as the layout.</h3>
-              <ul class="case-list">
-                <li>Removed repeated text like "Yoga with Kara with Kara."</li>
-                <li>Made class names large and instructor names smaller.</li>
-                <li>Structured memberships from actual gym package info.</li>
-                <li>Replaced generic copy with warmer, more premium brand language.</li>
-                <li>Used clear CTAs like Explore Class, Schedule, Join Now, and View All Classes.</li>
-              </ul>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">Development & Implementation</p>
-              <h3>Custom responsive prototype logic.</h3>
-              <ul class="case-list">
-                <li>Dynamic rendering from JavaScript data structures.</li>
-                <li>Reusable data for classes, memberships, events, instructors, and media.</li>
-                <li>Homepage class hero driven by the recurring weekly schedule.</li>
-                <li>Upcoming class recommendations exclude currently featured classes.</li>
-                <li>Header contrast switching, event sorting, profile menu states, and scroll-triggered reveals.</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Iteration Timeline</p>
-            <h3>The project was designed through rounds of refinement.</h3>
-          </div>
-          <div class="case-timeline">
-            <article class="case-step"><span>Phase 1</span><h4>Foundation</h4><p>Built initial homepage, navigation, memberships, classes, logo use, and real data.</p></article>
-            <article class="case-step"><span>Phase 2</span><h4>Header</h4><p>Separated nav/account actions and tested thickness, borders, blur, transparency, and gradients.</p></article>
-            <article class="case-step"><span>Phase 3</span><h4>Class System</h4><p>Replaced a single featured class with dynamic multi-class video splits and clearer hierarchy.</p></article>
-            <article class="case-step"><span>Phase 4</span><h4>Welcome Story</h4><p>Added the large welcome statement, scroll reveal, and 496-to-GYM transformation.</p></article>
-            <article class="case-step"><span>Phase 5</span><h4>Explore Classes</h4><p>Rebuilt cards as cinematic image panels with upcoming logic and class-specific styling.</p></article>
-            <article class="case-step"><span>Phase 6</span><h4>Community</h4><p>Added real event posts, team background, focused carousel, arrow controls, and refined overlays.</p></article>
-          </div>
-
-          <div class="screenshot-grid" aria-label="496 Gym screenshot placeholders">
-            <article><span>Homepage multi-class hero screenshot</span></article>
-            <article><span>Welcome section screenshot</span></article>
-            <article><span>Explore classes image strip screenshot</span></article>
-            <article><span>Community carousel screenshot</span></article>
-            <article><span>Membership page screenshot</span></article>
-            <article><span>Schedule page screenshot</span></article>
-          </div>
-
-          <div class="case-event-strip" aria-label="496 Gym community event examples">
-            <article>
-              <img src="assets/case-496-championships.jpg" alt="496 Championships event graphic" loading="lazy" decoding="async" />
-              <span>July 5, 2026</span>
-              <h4>496 Championships</h4>
-            </article>
-            <article>
-              <img src="assets/case-496-mermaid.jpg" alt="496 Easter Mermaid Pool Hike graphic" loading="lazy" decoding="async" />
-              <span>April 5, 2026</span>
-              <h4>Mermaid Pool Hike</h4>
-            </article>
-            <article>
-              <img src="assets/case-496-socafit.jpg" alt="496 x SocaBurnout SocaFit Sessions graphic" loading="lazy" decoding="async" />
-              <span>January 27, 2026</span>
-              <h4>SocaFit Sessions</h4>
-            </article>
-            <article>
-              <img src="assets/case-496-bamboo.jpg" alt="496 Bamboo Cathedral Trek graphic" loading="lazy" decoding="async" />
-              <span>September 22, 2025</span>
-              <h4>Bamboo Cathedral Trek</h4>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Challenges</p>
-              <h3>Balancing ambition with usability.</h3>
-              <p>
-                The homepage used large videos and bold typography, which created readability challenges. I
-                tested multiple overlay approaches before settling on treatments that preserved energy without
-                making the page feel heavy. Many decisions came down to small refinements: logo sizing, header
-                height, bubble spacing, text alignment, video crops, and carousel placement.
-              </p>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">Current Outcome</p>
-              <h3>A credible, immersive prototype.</h3>
-              <p>
-                The result is a polished responsive concept that presents 496 Gym as a modern,
-                community-centered fitness brand using real schedules, memberships, brand assets, class media,
-                and event imagery.
-              </p>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Future Roadmap</p>
-              <div class="case-goal-grid compact">
-                <span>Live class booking</span>
-                <span>Member dashboard</span>
-                <span>Trainer profiles</span>
-                <span>Online membership purchase</span>
-                <span>Class capacity tracking</span>
-                <span>Event registration</span>
-                <span>Cafe ordering</span>
-                <span>Analytics dashboard</span>
-              </div>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">Reflection</p>
-              <h3>Translating a local gym into a digital product.</h3>
-              <p>
-                This project helped me practice the full cycle of designing and developing a real
-                business-facing digital experience. I worked from existing brand assets, real membership data,
-                class schedules, stakeholder preferences, and continuous critique.
-              </p>
-              <p>
-                I also learned how to balance visual ambition with usability. Some ideas looked interesting in
-                isolation but did not support the user experience once tested in context. More than building a
-                website, this became an exercise in translating a local gym's identity, services, and community
-                into a digital product experience.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section case-study flatline-case product-project-panel" id="case-study-flatline" aria-labelledby="case-flatline-title" role="tabpanel" data-project-panel="flatline" hidden>
-          <div class="case-hero">
-            <div class="case-hero-copy">
-              <p class="eyebrow">Launched Business Website</p>
-              <h2 id="case-flatline-title">Flatline Pest Technology Digital Experience</h2>
-              <p>
-                I partnered with a local pest control business in Trinidad & Tobago to design and launch a
-                conversion-focused digital experience that improves trust, customer understanding, and lead
-                generation.
-              </p>
-              <div class="case-tags" aria-label="Flatline Pest Technology project tags">
-                <span>Lead Generation</span>
-                <span>Stakeholder Research</span>
-                <span>UX Writing</span>
-                <span>Local SEO</span>
-                <span>Cloudflare Pages</span>
-                <span>Responsive Design</span>
-              </div>
-              <div class="case-actions">
-                <a class="button primary" href="https://flatlinepesttech.com" target="_blank" rel="noreferrer">Visit Live Site</a>
-                <a class="button secondary" href="#flatline-decisions">UX Decisions</a>
-              </div>
-            </div>
-            <div class="browser-mockup flatline-browser" aria-label="Flatline Pest Technology website preview">
-              <div class="browser-bar" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-                <p>flatlinepesttech.com</p>
-              </div>
-              <div class="browser-preview">
-                <img class="case-logo-mark flatline-logo-mark" src="assets/case-flatline-logo.png" alt="Flatline Pest Technology logo" loading="lazy" decoding="async" />
-                <p>Fast solutions for the pests you want gone.</p>
-                <strong>Live website launched for a real pest control company operating in Trinidad & Tobago.</strong>
-              </div>
-              <div class="browser-thumb-grid" aria-hidden="true">
-                <span>Services screenshot</span>
-                <span>About page screenshot</span>
-                <span>Inspection form screenshot</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="case-meta-grid">
-            <article class="case-mini-card">
-              <span>Role</span>
-              <p>UX Designer, Content Designer, Frontend Developer, and Product Strategist.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Client</span>
-              <p>Flatline Pest Technology, a Trinidad & Tobago pest control company owned by Keon Mollineau.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Platform</span>
-              <p>Static website deployed through GitHub and Cloudflare Pages.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Focus</span>
-              <p>Trust, service clarity, mobile contact paths, local SEO, and inspection lead generation.</p>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Project Overview</p>
-              <h3>A real business website, not a mock project.</h3>
-              <p>
-                Flatline needed a modern digital presence that could build trust, explain services clearly,
-                make contact easier, support lead generation, and reflect the business professionally. The
-                company has operated in Trinidad and Tobago since 2012, with management and employees bringing
-                more than 32 years of combined pest and sanitation management experience.
-              </p>
-              <p>
-                The website had to feel professional, welcoming, trustworthy, and easy to maneuver, especially
-                for customers who may be older, in an urgent situation, or not especially tech-savvy.
-              </p>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">The Problem</p>
-              <h3>Reducing friction in a trust-heavy service.</h3>
-              <p>
-                Pest control often involves urgency and uncertainty. Prospective customers needed a clearer way
-                to understand available services, trust the company, and request an inspection quickly. The
-                website needed to support direct referrals while creating a more reliable digital path for new
-                leads.
-              </p>
-              <ul class="case-list">
-                <li>Make WhatsApp, phone, and inspection actions obvious.</li>
-                <li>Explain services for homes, businesses, construction clients, and marine customers.</li>
-                <li>Communicate training, insurance, follow-ups, warranties, and IPM practices.</li>
-                <li>Handle inspection caveats without weakening the main CTA.</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Stakeholder Research</p>
-            <h3>I started by asking business questions before designing screens.</h3>
-          </div>
-          <div class="case-input-grid">
-            <article class="case-panel">
-              <h3>Questions Asked</h3>
-              <ul class="case-list">
-                <li>Which services are most profitable or important?</li>
-                <li>Which customers matter most: residential, commercial, construction, or marine?</li>
-                <li>What causes missed leads or booking frustration?</li>
-                <li>What makes Flatline different from competitors?</li>
-                <li>Which action matters most: WhatsApp, phone calls, or quote forms?</li>
-              </ul>
-            </article>
-            <article class="case-panel">
-              <h3>What I Learned</h3>
-              <ul class="case-list">
-                <li>Response time is a major competitive advantage.</li>
-                <li>Termite, general pest, lawn, and sanitization services are especially important.</li>
-                <li>Customers need tailored quotes, not generic pricing.</li>
-                <li>Training, insurance, follow-ups, and warranties matter for trust.</li>
-                <li>Free inspections apply in Trinidad; Tobago/regional visits may involve travel fees.</li>
-              </ul>
-            </article>
-            <article class="case-panel case-media-panel">
-              <img src="assets/case-flatline-hero.jpg" alt="Flatline Pest Technology hero website visual" loading="lazy" decoding="async" />
-            </article>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Goals</p>
-            <h3>Every design choice needed to support customer trust or lead generation.</h3>
-          </div>
-          <div class="case-goal-grid">
-            <span>Increase inspection and quote requests</span>
-            <span>Make WhatsApp and call actions easier to access</span>
-            <span>Build trust through training, experience, insurance, and follow-up support</span>
-            <span>Explain services clearly for multiple customer types</span>
-            <span>Improve mobile usability for a broad customer age range</span>
-            <span>Support future local SEO growth</span>
-            <span>Clarify free-inspection limitations without creating confusion</span>
-            <span>Launch a real site with a custom domain and HTTPS</span>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Audience</p>
-            <h3>Different customers arrive with different anxieties.</h3>
-          </div>
-          <div class="persona-grid">
-            <article class="case-mini-card">
-              <span>Homeowner</span>
-              <p>Wants fast help, may not know what pest they are dealing with, and needs reassurance plus clear next steps.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Business Owner</span>
-              <p>Needs reliable, low-disruption service, insurance confidence, and fast communication.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Construction Client</span>
-              <p>Needs pre-construction termite treatment, compliance confidence, timeline clarity, and long-term protection.</p>
-            </article>
-            <article class="case-mini-card">
-              <span>Marine Customer</span>
-              <p>Needs to know Flatline can handle boats, yachts, sailboats, and other non-traditional environments.</p>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Information Architecture</p>
-              <h3>A site structure built around contact and service clarity.</h3>
-              <div class="sitemap-grid" aria-label="Flatline Pest Technology site architecture">
-                <span>Home</span>
-                <span>Services</span>
-                <span>Why Flatline</span>
-                <span>How It Works</span>
-                <span>FAQ</span>
-                <span>Request Inspection</span>
-                <span>About</span>
-                <span>Training & Safety</span>
-              </div>
-              <p>
-                The homepage guides people from the promise, to services, to trust factors, to the process, to
-                an inspection request. The About page carries company background, IPM approach, training, and
-                client categories without exposing specific client names.
-              </p>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">Content Strategy</p>
-              <h3>Content that protects trust.</h3>
-              <ul class="case-list">
-                <li>Prioritized lead generation without making the site feel pushy.</li>
-                <li>Used clear microcopy like "Talk to An Expert Now" and "Schedule your free inspection*."</li>
-                <li>Clarified that free inspections are for Trinidad only.</li>
-                <li>Explained after-hours WhatsApp preference and emergency-call expectations.</li>
-                <li>Replaced specific client names with general client categories to protect privacy.</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Service Architecture</p>
-            <h3>Service cards were expanded around real business priorities.</h3>
-          </div>
-          <div class="service-architecture-grid">
-            <article>
-              <img src="assets/case-flatline-termite.jpg" alt="Termite control service visual" loading="lazy" decoding="async" />
-              <span>High-value</span>
-              <h4>Termite Control</h4>
-            </article>
-            <article>
-              <img src="assets/case-flatline-gpc.jpg" alt="General pest control service visual" loading="lazy" decoding="async" />
-              <span>Core Service</span>
-              <h4>General Pest Control</h4>
-            </article>
-            <article>
-              <img src="assets/case-flatline-bird.jpg" alt="Bird control service visual" loading="lazy" decoding="async" />
-              <span>Separated</span>
-              <h4>Bird Control</h4>
-            </article>
-            <article>
-              <img src="assets/case-flatline-tick.jpg" alt="Flea and tick control service visual" loading="lazy" decoding="async" />
-              <span>Expanded</span>
-              <h4>Flea & Tick Control</h4>
-            </article>
-            <article>
-              <img src="assets/case-flatline-sanitization.jpg" alt="Sanitization service visual" loading="lazy" decoding="async" />
-              <span>Trust Signal</span>
-              <h4>Sanitization & Odour Control</h4>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Brand & Visual Direction</p>
-              <h3>Professional, clean, urgent, and approachable.</h3>
-              <p>
-                The visual system uses brand red from the logo, deep green for trust and contrast, and light
-                mint/green card surfaces for a clean service feel. Rounded cards, soft shadows, large readable
-                type, and service imagery make the site feel modern without making it difficult for older users.
-              </p>
-              <div class="design-system-strip flatline-swatches" aria-label="Flatline design system samples">
-                <span class="swatch flatline-red">Brand Red</span>
-                <span class="swatch flatline-green">Deep Green</span>
-                <span class="swatch flatline-mint">Mint</span>
-                <span class="swatch flatline-cream">Warm Surface</span>
-                <span class="swatch flatline-black">Text</span>
-              </div>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">Motion Detail</p>
-              <h3>The heartbeat/dead-ant animation became a brand moment.</h3>
-              <p>
-                I iterated from a static heartbeat-like line into a custom animated pulse that flatlines into
-                an uploaded ant image. The timing, red color, scale, alignment, and final linger were refined
-                so the metaphor landed without distracting from the inspection CTA.
-              </p>
-            </article>
-          </div>
-
-          <div class="case-section-heading" id="flatline-decisions">
-            <p class="eyebrow">UX Decisions</p>
-            <h3>Conversion decisions backed by business context.</h3>
-          </div>
-          <div class="decision-grid">
-            <article class="decision-card">
-              <span>Central Header CTA</span>
-              <h3>Problem</h3>
-              <p>Users needed a clear path to request help.</p>
-              <h3>Decision</h3>
-              <p>Moved "Talk to An Expert Now" to the center of the header with inspection-supporting copy.</p>
-              <h3>Expected Impact</h3>
-              <p>Higher interaction with the main lead-generation action.</p>
-            </article>
-            <article class="decision-card">
-              <span>Mobile Contact Bar</span>
-              <h3>Problem</h3>
-              <p>Mobile users should not need to scroll to find contact actions.</p>
-              <h3>Decision</h3>
-              <p>Added persistent quick actions for calling, WhatsApp, and requesting an inspection.</p>
-              <h3>Expected Impact</h3>
-              <p>Reduced friction for urgent or older mobile users.</p>
-            </article>
-            <article class="decision-card">
-              <span>Free Inspection Caveat</span>
-              <h3>Problem</h3>
-              <p>"Free inspection" could mislead Tobago or regional customers.</p>
-              <h3>Decision</h3>
-              <p>Added an asterisk and clarified that free inspections apply in Trinidad only.</p>
-              <h3>Expected Impact</h3>
-              <p>Better transparency and fewer expectation gaps.</p>
-            </article>
-            <article class="decision-card">
-              <span>Client Privacy</span>
-              <h3>Problem</h3>
-              <p>Specific client names could expose relationships and create poaching concerns.</p>
-              <h3>Decision</h3>
-              <p>Replaced names with general client categories while preserving credibility.</p>
-              <h3>Expected Impact</h3>
-              <p>Protected client relationships without weakening trust.</p>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Development & Launch</p>
-              <h3>Built, deployed, and troubleshot like a real product.</h3>
-              <ul class="case-list">
-                <li>Static HTML/CSS/JavaScript implementation with custom animations.</li>
-                <li>Responsive layout, mobile polish, and horizontal-scroll fixes.</li>
-                <li>Git/GitHub workflow and Cloudflare Pages deployment.</li>
-                <li>Custom domain setup for flatlinepesttech.com, including www/non-www behavior.</li>
-                <li>Large media issue solved through web-ready image/video asset management.</li>
-              </ul>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">SEO & Local Business Strategy</p>
-              <h3>Preparing the site to be found.</h3>
-              <ul class="case-list">
-                <li>Service-specific keywords like pest control Trinidad and termite treatment Trinidad.</li>
-                <li>Clear service categories for future SEO landing pages.</li>
-                <li>Google Business Profile description prepared.</li>
-                <li>Google Search Console setup started with domain verification considerations.</li>
-                <li>Future structured data, favicon, and search appearance improvements considered.</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="case-section-heading">
-            <p class="eyebrow">Iteration Log</p>
-            <h3>The finished site came from many rounds of practical refinement.</h3>
-          </div>
-          <div class="case-timeline flatline-timeline">
-            <article class="case-step"><span>01</span><h4>Discovery</h4><p>Asked stakeholder questions about services, leads, trust factors, and contact preferences.</p></article>
-            <article class="case-step"><span>02</span><h4>CTA Hierarchy</h4><p>Refined header layout, phone number visibility, and inspection action placement.</p></article>
-            <article class="case-step"><span>03</span><h4>Service Structure</h4><p>Expanded cards for termite, marine, rodent, bird, mosquito, flea/tick, lawn, and sanitization services.</p></article>
-            <article class="case-step"><span>04</span><h4>Brand Motion</h4><p>Polished heartbeat-to-dead-ant timing, image use, color, alignment, and sequence.</p></article>
-            <article class="case-step"><span>05</span><h4>About & Privacy</h4><p>Added a dedicated About page and changed named clients into general client categories.</p></article>
-            <article class="case-step"><span>06</span><h4>Launch</h4><p>Resolved asset-size friction, deployed through Cloudflare Pages, connected the domain, and checked HTTPS behavior.</p></article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Current Status</p>
-              <h3>Live and ready to measure.</h3>
-              <ul class="case-list">
-                <li>Website launched at flatlinepesttech.com.</li>
-                <li>Contact paths clarified for phone, WhatsApp, and inspection requests.</li>
-                <li>Google Business Profile description prepared.</li>
-                <li>Search Console setup started.</li>
-                <li>Mobile usability fixes completed.</li>
-              </ul>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">Future Metrics</p>
-              <div class="case-goal-grid compact">
-                <span>Calls from website</span>
-                <span>WhatsApp clicks</span>
-                <span>Inspection submissions</span>
-                <span>Search queries</span>
-                <span>Conversion rate</span>
-                <span>Most visited services</span>
-                <span>Google Business views</span>
-                <span>Lighthouse score</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="case-two-column">
-            <article class="case-panel">
-              <p class="note-kicker">Future Roadmap</p>
-              <div class="case-goal-grid compact">
-                <span>Service-specific SEO pages</span>
-                <span>Online booking</span>
-                <span>Quote estimator</span>
-                <span>AI/chat assistant</span>
-                <span>Review system</span>
-                <span>Before/after gallery</span>
-                <span>Technician portal</span>
-                <span>Analytics reporting</span>
-              </div>
-            </article>
-            <article class="case-panel">
-              <p class="note-kicker">Reflection</p>
-              <h3>Practicing product thinking through a real business launch.</h3>
-              <p>
-                This project taught me to treat a website as a business problem, not just a design task. I
-                practiced stakeholder interviewing, translated business needs into UX and content decisions,
-                balanced brand, usability, SEO, and conversion, and gained experience deploying and
-                troubleshooting a real website.
-              </p>
-              <p>
-                It also showed me how content design can reduce customer confusion and support trust. Small
-                choices like clarifying inspection limits, protecting client privacy, and making WhatsApp
-                easier to find can matter just as much as the visual design.
-              </p>
-            </article>
-          </div>
-        </section>
-        </div>
-
-        <section class="section reflections media-followup" id="reflections" aria-labelledby="reflection-title" hidden>
-          <div class="section-heading">
-            <p class="eyebrow">Reflection</p>
-            <h2 id="reflection-title">Looking Back At My Work</h2>
-          </div>
-          <article class="reflection-card">
-            <div class="reflection-heading">
+            <article class="media-card carousel-card">
+              <span class="project-badge">Short Film</span>
+              <img src="assets/TheCivilizingEffectThumbnail2.png" alt="The Civilizing Effect thumbnail" loading="lazy" decoding="async" />
               <h3>The Civilizing Effect</h3>
-            </div>
-            <p class="reflection-preview">
-              Working on <em>The Civilizing Effect</em> was for sure one of the most meaningful creative experiences I have gotten to experience in college so far. It was a project that challenged me creatively and technically and I think it taught me a lot about collaboration and adaptation in filmmaking. Our group was Eric, Emma, Lauren, Tori, and myself, and very early in the semester we decided to divide up our roles.
-            </p>
-            <details class="reflection-details">
-              <summary>Read Full Reflection</summary>
-              <div class="reflection-body">
-                <p>
-                  I took on the role of writer because writing has always been one of my strong creative interests, and everyone in the group agreed that it made sense for me to handle the script.
-                </p>
-                <p>
-                  The assignment was to adapt a chapter from Douglas Rushkoff’s <em>Program Or Be Programmed</em> textbook, and our group was assigned the chapter on identity. After reading the chapter, I started trying to figure out the way we could translate those ideas into a narrative that people would actually emotionally connect with. Personally, I feel like that was the hardest part at first. The chapter discussed anonymity, social systems and the way technology can reward efficiency over empathy, so my focus was going to be on those themes. One of the major concepts was the “civilizing effect,” which is basically the idea that when people are less anonymous and more connected to each other as human beings, they tend to behave with more empathy and understanding.
-                </p>
-                <p>
-                  Eric suggested the idea of using a cyborg character to explore identity, and I thought that was a really good direction to go because it gave us a way to examine humanity from the outside looking in. From there, I created a really big mind map where I started planning possible characters, backstories, themes, and plot points. Honestly, although that process was difficult, it was one of my favorite parts of the project because it felt like I was slowly discovering the story. Once I had enough ideas mapped out, I wrote the first draft of the script.
-                </p>
-                <p>
-                  After that, we had a meeting at Yellow Dog Coffee with Emma and Lauren where we went through both the script and the mind map together. They gave feedback and notes on certain scenes and story elements, and I went back and revised the script again. I think this stage taught me a lot about the collaborative nature of filmmaking. Writing for film is different from writing something completely personal because you have to leave room for other people’s ideas and interpretations. At first that was difficult for me because when you spend so much time writing something, you naturally become attached to it. Over time though, I realized that the feedback was helping the project become stronger and more focused.
-                </p>
-                <p>
-                  When filming began, my role expanded beyond writing. Officially, I acted as a script supervisor, but I also helped with directing actors and worked as second AC during production. Since I had written the script, I felt like I had a strong understanding of the emotional intentions behind scenes and dialogue. During filming, I would help actors with questions they had about their characters or the emotions in a scene. I was not trying to fully direct performances, but more so just to help make sure the emotions matched the tone and meaning of the script.
-                </p>
-                <p>
-                  Technically, the production days were also a really valuable experience for me. We were fortunate enough to have access to a larger crew through connections at Gaylord College, and that made the set feel much more real and professional. One of the most memorable things I got to do was operate a dolly zoom shot. I honestly thought that was very cool because it was one of those film techniques I had always seen in movies, but never executed myself. Being able to physically contribute to the cinematography gave me a greater appreciation for the way visual storytelling works alongside writing and acting.
-                </p>
-                <p>
-                  The entire film was shot at Lauren’s house across two filming days. During production, there were also practical limitations we had to deal with, especially regarding time. Emma eventually revised parts of the script in order to reduce the number of scenes and make production more manageable. At first, I think part of me struggled with seeing changes made to something I originally wrote. However, filmmaking is such a collaborative medium, and what this experience taught me is that flexibility is extremely necessary. A screenplay on paper is one thing, but the realities of production can end up requiring adjustments and you have to be prepared for that. The thing that mattered most was preserving the emotional and thematic message that was at the core of the story.
-                </p>
-                <p>
-                  Looking back on the project now, I think the biggest thing I learned was the importance of collaboration and trust within a creative team. Every person involved contributed something valuable, and the final product became stronger because of that. Personally, I also gained confidence in my ability to write stories that communicate larger ideas through character and emotion. I feel like <em>The Civilizing Effect</em> came out pretty good in the end, and now when I look at it, I am genuinely proud of the work we created together.
-                </p>
-              </div>
-            </details>
-          </article>
-        </section>
-
-        <section class="section skills shared-content" id="skills" aria-labelledby="skills-title" hidden>
-          <div class="skills-layout">
-            <div class="skills-heading">
-              <p class="eyebrow">Capabilities</p>
-              <h2 id="skills-title">Ethan's Very Specific Set of Skills</h2>
-            </div>
-            <div class="skills-content">
-              <div class="skills-grid">
-                <article class="skill-card skill-card-content">
-                  <span>01</span>
-                  <h3>Content & UX</h3>
-                  <p>Content strategy, UX writing, content architecture, inclusive design, accessibility standards, and AP Style.</p>
-                </article>
-                <article class="skill-card skill-card-product">
-                  <span>02</span>
-                  <h3>Product & Engineering</h3>
-                  <p>TypeScript/JavaScript, React Native, Supabase, PostgreSQL, Auth, Storage, RESTful APIs, Git, Figma, and Jira.</p>
-                </article>
-                <article class="skill-card skill-card-film">
-                  <span>03</span>
-                  <h3>Film & Creative Production</h3>
-                  <p>Scriptwriting, directing, cinematography, editing, set design, script supervision, camera support, Premiere, Audition, and Photoshop.</p>
-                </article>
-                <article class="skill-card skill-card-leadership">
-                  <span>04</span>
-                  <h3>Leadership & Brand</h3>
-                  <p>Project management, team leadership, social media marketing, campaign strategy, event branding, community engagement, and student organization growth.</p>
-                </article>
-              </div>
-              <div class="resume-panel">
-                <p>
-                  A practical mix of filmmaking, UX, software, leadership, and brand-building experience,
-                  shaped through Limer, student media leadership, creative production, and community work.
-                </p>
-                <a class="button primary" href="assets/EthanMCSmith Resume.pdf" download>Download Resume</a>
-              </div>
-            </div>
+              <p>Writer, Script Supervisor, and 1st Assistant Camera.</p>
+            </article>
+            <article class="media-card carousel-card">
+              <span class="project-badge">Short Film</span>
+              <img src="assets/TheTalkingStageThumbnail.png" alt="The Talking Stage thumbnail" loading="lazy" decoding="async" />
+              <h3>The Talking Stage</h3>
+              <p>Writer, Director, Cinematographer, Actor, and Editor.</p>
+            </article>
+            <article class="media-card carousel-card">
+              <span class="project-badge">Short Film</span>
+              <img src="assets/NailsThumbnail.png" alt="Nails thumbnail" loading="lazy" decoding="async" />
+              <h3>Nails</h3>
+              <p>Writer and Set Designer.</p>
+            </article>
+            <article class="media-card carousel-card">
+              <span class="project-badge">Photoshoot</span>
+              <img src="assets/nabj-group.jpg" alt="OU NABJ executive team photoshoot" loading="lazy" decoding="async" />
+              <h3>NABJ Executive Team</h3>
+              <p>Creative direction, photography, editing, and graphic design.</p>
+            </article>
           </div>
         </section>
 
+        <section class="section portfolio-strip" id="product" aria-labelledby="product-title">
+          <div class="section-bar glass-pill gradient-border">
+            <p class="eyebrow">Product Design & Development</p>
+            <h2 id="product-title">Apps, Websites, UX, And Case Studies.</h2>
+          </div>
+          <div class="product-carousel-wrap">
+            <button class="carousel-control" type="button" data-product-prev aria-label="Previous product project">‹</button>
+            <div class="product-carousel carousel" data-carousel="product" aria-label="Product case study carousel">
+              <button class="product-card carousel-card is-focused" type="button" data-case-target="limer">
+                <span class="project-badge">App Case Study</span>
+                <img class="project-logo limer-logo" src="assets/LimerLogo.png" alt="Limer logo" />
+                <h3>Limer</h3>
+                <p>The college connector for clubs, events, chats, and campus memory.</p>
+              </button>
+              <button class="product-card carousel-card" type="button" data-case-target="gym">
+                <span class="project-badge">Website Case Study</span>
+                <img class="project-logo" src="assets/case-496-logo.png" alt="496 Gym logo" />
+                <h3>496 Gym</h3>
+                <p>A responsive concept website for a local gym and community brand.</p>
+              </button>
+              <button class="product-card carousel-card" type="button" data-case-target="flatline">
+                <span class="project-badge">Launch Case Study</span>
+                <img class="project-logo flatline-logo" src="assets/case-flatline-logo.png" alt="Flatline Pest Technology logo" />
+                <h3>Flatline Pest Technology</h3>
+                <p>A live business website designed around trust, clarity, and lead generation.</p>
+              </button>
+            </div>
+            <button class="carousel-control" type="button" data-product-next aria-label="Next product project">›</button>
+          </div>
+        </section>
+
+        <section class="section case-reader" id="case-study" aria-labelledby="case-study-title">
+          <div class="case-reader-inner glass-panel gradient-border">
+            <p class="eyebrow">Focused Case Study</p>
+            <h2 id="case-study-title">A Cleaner Look At The Work.</h2>
+
+            <article class="case-article is-active" data-case-panel="limer">
+              <div class="case-copy">
+                <p class="case-kicker">Limer / Full-Stack App In Progress</p>
+                <h3>Limer - The College Connector</h3>
+                <p>
+                  Limer is a social app built around the college experience. Instead of clubs, events,
+                  group chats, and recap posts living in separate places, Limer brings them into one campus
+                  ecosystem so students can discover what is happening and keep the conversation moving.
+                </p>
+                <h4>Problem</h4>
+                <p>
+                  Campus life can feel fragmented. Events are promoted in one place, group chats happen in
+                  another, and memories disappear after the night ends. The product challenge is making social
+                  discovery feel organized without making it feel corporate.
+                </p>
+                <h4>Approach</h4>
+                <p>
+                  I designed around event discovery, RSVP behavior, club identity, direct messages, group
+                  chats, profile presence, and recap posts. The app combines UX writing, product architecture,
+                  React Native implementation, Supabase data modeling, auth, storage, and iterative design.
+                </p>
+                <h4>What It Shows</h4>
+                <p>
+                  Limer shows my ability to think like a founder and a builder at the same time: shape the
+                  product idea, design the user flows, write the interface language, and build toward launch.
+                </p>
+              </div>
+              <div class="case-visual phone-stack" aria-label="Limer app screenshots">
+                <img src="assets/LimerHomeFeedPage.PNG" alt="Limer home feed screen" loading="lazy" decoding="async" />
+                <img src="assets/LimerExplorePage.PNG" alt="Limer explore screen" loading="lazy" decoding="async" />
+                <img src="assets/LimerEventPage.PNG" alt="Limer event screen" loading="lazy" decoding="async" />
+              </div>
+            </article>
+
+            <article class="case-article" data-case-panel="gym" hidden>
+              <div class="case-copy">
+                <p class="case-kicker">496 Gym / Responsive Website Concept</p>
+                <h3>Translating a local gym into a digital experience.</h3>
+                <p>
+                  496 Gym needed a modern website concept that could communicate its energy, class schedule,
+                  memberships, events, and community feel. The work began with real gym assets and evolved
+                  through repeated design critique, content restructuring, and front-end implementation.
+                </p>
+                <h4>Problem</h4>
+                <p>
+                  The experience needed to feel premium and alive while still being clear for prospective
+                  members, current members, staff, and older visitors who needed familiar navigation patterns.
+                </p>
+                <h4>Approach</h4>
+                <p>
+                  I organized the site around membership discovery, class information, schedule access, event
+                  storytelling, staff tasks, and account actions. The prototype used real class names,
+                  membership details, event imagery, brand colors, and responsive front-end logic.
+                </p>
+                <h4>What It Shows</h4>
+                <p>
+                  This case study shows UI/UX iteration, information architecture, responsive design,
+                  JavaScript-driven content, brand translation, and the discipline to reduce visual ambition
+                  until the user experience is easier to follow.
+                </p>
+              </div>
+              <div class="case-visual editorial-grid" aria-label="496 Gym supporting visuals">
+                <img src="assets/case-496-team.jpg" alt="496 Gym team visual" loading="lazy" decoding="async" />
+                <img src="assets/case-496-championships.jpg" alt="496 Championships event graphic" loading="lazy" decoding="async" />
+                <img src="assets/case-496-socafit.jpg" alt="SocaFit event graphic" loading="lazy" decoding="async" />
+              </div>
+            </article>
+
+            <article class="case-article" data-case-panel="flatline" hidden>
+              <div class="case-copy">
+                <p class="case-kicker">Flatline Pest Technology / Live Business Website</p>
+                <h3>Designing for trust, service clarity, and conversion.</h3>
+                <p>
+                  Flatline Pest Technology is a real pest control business in Trinidad and Tobago. I helped
+                  turn the business context into a live website that explains services clearly, builds trust,
+                  and makes it easier for customers to request help.
+                </p>
+                <h4>Problem</h4>
+                <p>
+                  Pest control customers often arrive with urgency and uncertainty. The site needed to make
+                  WhatsApp, phone, and inspection actions obvious while still explaining training, insurance,
+                  warranties, service categories, and inspection limitations.
+                </p>
+                <h4>Approach</h4>
+                <p>
+                  I started with stakeholder questions, then structured the site around lead generation,
+                  service education, mobile contact paths, trust signals, local SEO, and a clear inspection
+                  request flow. The build was deployed through GitHub and Cloudflare Pages.
+                </p>
+                <h4>What It Shows</h4>
+                <p>
+                  Flatline shows practical product thinking: interviewing a client, translating needs into
+                  content and UX decisions, designing for older and urgent users, launching with a custom
+                  domain, and making small details serve the business goal.
+                </p>
+                <a class="button primary compact-button" href="https://flatlinepesttech.com" target="_blank" rel="noreferrer">Visit Live Site</a>
+              </div>
+              <div class="case-visual service-grid" aria-label="Flatline Pest Technology supporting visuals">
+                <img src="assets/case-flatline-hero.jpg" alt="Flatline website hero visual" loading="lazy" decoding="async" />
+                <img src="assets/case-flatline-termite.jpg" alt="Termite service visual" loading="lazy" decoding="async" />
+                <img src="assets/case-flatline-gpc.jpg" alt="General pest control service visual" loading="lazy" decoding="async" />
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section background" id="background" aria-labelledby="background-title">
+          <div class="section-bar glass-pill gradient-border">
+            <p class="eyebrow">Background</p>
+            <h2 id="background-title">The Person Behind The Projects.</h2>
+          </div>
+          <div class="resume-grid">
+            <article class="resume-block glass-panel">
+              <p class="eyebrow">Awards</p>
+              <h3>Recognition</h3>
+              <ul>
+                <li><strong>BEA Award of Excellence in Scriptwriting</strong> / 2025</li>
+                <li><strong>deadCenter Film Education Scriptwriting Finalist</strong> / 2026</li>
+                <li><strong>United World College Scholar</strong> / Since 2022</li>
+              </ul>
+            </article>
+            <article class="resume-block glass-panel">
+              <p class="eyebrow">Leadership</p>
+              <h3>Positions Held</h3>
+              <ul>
+                <li><strong>Product and Development Lead</strong> / Limer / Feb. 2025-present</li>
+                <li><strong>President</strong> / OU National Association of Black Journalists / Aug. 2024-Feb. 2026</li>
+                <li><strong>Advisor</strong> / Black Business Network, University of Oklahoma / Oct. 2024-May 2026</li>
+              </ul>
+            </article>
+            <article class="resume-block glass-panel">
+              <p class="eyebrow">Education</p>
+              <h3>Academic Path</h3>
+              <ul>
+                <li><strong>University of Oklahoma</strong> / B.A. in Journalism, Creative Media Production major, Information Studies minor / Aug. 2022-May 2026</li>
+                <li><strong>Li Po Chun United World College of Hong Kong</strong> / International Baccalaureate Diploma / Aug. 2019-May 2021</li>
+              </ul>
+            </article>
+            <article class="resume-block glass-panel">
+              <p class="eyebrow">Experience</p>
+              <h3>Work And Practice</h3>
+              <ul>
+                <li><strong>SoonerVision on ESPN+</strong> / Production Assistant supporting NCAA Division I live broadcasts / Mar. 2026-Jun. 2026</li>
+                <li><strong>Limer</strong> / In-app content structure, user flows, UX copy, accessibility thinking, and product voice.</li>
+                <li><strong>OU NABJ</strong> / Revived the chapter, grew membership from 2 founders to 50+ students, and led events, campaigns, and communications.</li>
+                <li><strong>Flatline Pest Technology</strong> / Client discovery, website launch, SEO thinking, and Cloudflare deployment.</li>
+                <li><strong>Film Production</strong> / Writing, directing, cinematography, editing, script supervision, replay, EVS, and camera support.</li>
+              </ul>
+            </article>
+            <article class="resume-block glass-panel skills-block" id="skills">
+              <p class="eyebrow">Skills</p>
+              <h3>Capabilities</h3>
+              <div class="skill-cloud" aria-label="Skills">
+                <span>UX Writing</span>
+                <span>Content Strategy</span>
+                <span>Information Architecture</span>
+                <span>User Flows</span>
+                <span>UI/UX Design</span>
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>React Native</span>
+                <span>HTML/CSS</span>
+                <span>Supabase</span>
+                <span>PostgreSQL</span>
+                <span>Git</span>
+                <span>GitHub Pages</span>
+                <span>Figma</span>
+                <span>Jira</span>
+                <span>Responsive Design</span>
+                <span>Cloudflare R2</span>
+                <span>Cloudflare Pages</span>
+                <span>Canva</span>
+                <span>Microsoft Office</span>
+                <span>Scriptwriting</span>
+                <span>Directing</span>
+                <span>Cinematography</span>
+                <span>Editing</span>
+                <span>Adobe Creative Suite</span>
+                <span>Premiere</span>
+                <span>Leadership</span>
+                <span>Brand Strategy</span>
+              </div>
+            </article>
+          </div>
+        </section>
       </main>
 
-      <footer class="footer">
-        <p>"May we never meet the timid souls who know neither victory nor defeat." -  Ethan</p>
-        <div class="footer-links">
-          <a href="mailto:ethanmcsmith@gmail.com">Email</a>
+      <footer class="footer glass-panel" id="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let's build the next thing.</h2>
+          <p>Email: <a href="mailto:ethanmcsmith@gmail.com">ethanmcsmith@gmail.com</a></p>
+          <p>Phone: <a href="tel:+14055015748">(405) 501-5748</a></p>
+        </div>
+        <div class="footer-links" aria-label="Footer links">
+          <a href="#top">Top</a>
+          <a href="#media">Media</a>
+          <a href="#product">Product</a>
+          <a href="#background">Background</a>
+          <a href="assets/EthanMCSmith Resume.pdf" download>Resume</a>
           <a href="https://www.linkedin.com/in/ethan-smith-18447122a/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://www.instagram.com/e_smith7/" target="_blank" rel="noreferrer">Instagram</a>
         </div>
