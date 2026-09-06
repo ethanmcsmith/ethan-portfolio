@@ -23,11 +23,19 @@
           <a href="#media">Media</a>
           <a href="#product">Product</a>
           <a href="#background">Background</a>
-          <a href="#contact">Contact</a>
         </nav>
-        <button class="nav-cta glass-pill gradient-border" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="contact-modal">
-          Contact
-        </button>
+        <div class="header-actions" aria-label="Contact and resume">
+          <button class="action-pill nav-cta glass-pill gradient-border" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="contact-modal">
+            <span class="action-icon" aria-hidden="true">@</span>
+            <span class="action-short">Contact</span>
+            <span class="action-full">Contact Ethan</span>
+          </button>
+          <a class="action-pill resume-cta glass-pill gradient-border" href="assets/EthanMCSmith Resume.pdf" download>
+            <span class="action-icon" aria-hidden="true">↓</span>
+            <span class="action-short">Resume</span>
+            <span class="action-full">Download Resume</span>
+          </a>
+        </div>
       </header>
 
       <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title" hidden>
@@ -49,14 +57,11 @@
       <main id="top">
         <section class="hero section" aria-labelledby="hero-title">
           <div class="hero-shell">
-            <p class="eyebrow">Filmmaker / Founder / Builder</p>
             <h1 id="hero-title">
-              I build stories, systems, and digital experiences as a
-              <span class="flip-word" aria-live="polite">filmmaker.</span>
+              I <span class="flip-word" aria-live="polite">tell</span> experiences.
             </h1>
             <p>
-              I move between production sets, design systems, startup ideas, and code with the same goal:
-              make things that feel useful, memorable, and human.
+              Through storytelling, design, and technology, I turn ideas into experiences that connect with people.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="#media">View Media Work</a>
@@ -79,25 +84,65 @@
             </article>
             <article class="media-card carousel-card">
               <span class="project-badge">Short Film</span>
-              <img src="assets/SteelHeartsThumbnail.png" alt="Steel Hearts thumbnail" loading="lazy" decoding="async" />
+              <video
+                poster="assets/SteelHeartsThumbnail.png"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="metadata"
+                aria-label="Steel Hearts short film preview"
+              >
+                <source src="https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/Steel%20Hearts%20Compressed.mp4" type="video/mp4" />
+              </video>
               <h3>Steel Hearts</h3>
               <p>Executive Producer, Script Supervisor, 1st AD, and 2nd AC.</p>
             </article>
             <article class="media-card carousel-card">
               <span class="project-badge">Short Film</span>
-              <img src="assets/TheCivilizingEffectThumbnail2.png" alt="The Civilizing Effect thumbnail" loading="lazy" decoding="async" />
+              <video
+                poster="assets/TheCivilizingEffectThumbnail2.png"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="metadata"
+                aria-label="The Civilizing Effect short film preview"
+              >
+                <source src="https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/The%20Civilizing%20Effect%20H264.mp4" type="video/mp4" />
+              </video>
               <h3>The Civilizing Effect</h3>
               <p>Writer, Script Supervisor, and 1st Assistant Camera.</p>
             </article>
             <article class="media-card carousel-card">
               <span class="project-badge">Short Film</span>
-              <img src="assets/TheTalkingStageThumbnail.png" alt="The Talking Stage thumbnail" loading="lazy" decoding="async" />
+              <video
+                poster="assets/TheTalkingStageThumbnail.png"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="metadata"
+                aria-label="The Talking Stage short film preview"
+              >
+                <source src="https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/The%20Talking%20Stage%20Compressed.mp4" type="video/mp4" />
+              </video>
               <h3>The Talking Stage</h3>
               <p>Writer, Director, Cinematographer, Actor, and Editor.</p>
             </article>
             <article class="media-card carousel-card">
               <span class="project-badge">Short Film</span>
-              <img src="assets/NailsThumbnail.png" alt="Nails thumbnail" loading="lazy" decoding="async" />
+              <video
+                poster="assets/NailsThumbnail.png"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="metadata"
+                aria-label="Nails short film preview"
+              >
+                <source src="https://pub-78fa8c0adab8468b8dca433e4bf8f4a2.r2.dev/Nails%20%282023%29.mp4" type="video/mp4" />
+              </video>
               <h3>Nails</h3>
               <p>Writer and Set Designer.</p>
             </article>

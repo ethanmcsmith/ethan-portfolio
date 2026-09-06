@@ -36,7 +36,7 @@ if (reel) {
 }
 
 const flipWord = document.querySelector(".flip-word");
-const descriptors = ["filmmaker.", "founder.", "builder.", "designer.", "storyteller."];
+const descriptors = ["tell", "design", "build", "create"];
 let descriptorIndex = 0;
 
 if (flipWord) {
@@ -97,25 +97,24 @@ if (mediaCarousel) {
   let mediaAnimationFrame = null;
 
   const tickMediaCarousel = () => {
-    if (!reduceMotion.matches) {
-      mediaCarousel.scrollLeft += 0.45;
-
-      if (mediaCarousel.scrollLeft >= mediaCarousel.scrollWidth / 2) {
-        mediaCarousel.scrollLeft = 0;
-      }
-    }
-
     updateCarouselDepth(mediaCarousel);
     mediaAnimationFrame = window.requestAnimationFrame(tickMediaCarousel);
   };
 
-  mediaCarousel.addEventListener("scroll", () => updateCarouselDepth(mediaCarousel), { passive: true });
   mediaAnimationFrame = window.requestAnimationFrame(tickMediaCarousel);
 
   window.addEventListener("beforeunload", () => {
     window.cancelAnimationFrame(mediaAnimationFrame);
   });
 }
+
+document.querySelectorAll(".media-card video").forEach((video) => {
+  video.muted = true;
+  video.loop = true;
+  video.autoplay = true;
+  video.playsInline = true;
+  video.play().catch(() => {});
+});
 
 const productCards = document.querySelectorAll("[data-case-target]");
 const casePanels = document.querySelectorAll("[data-case-panel]");
