@@ -60,7 +60,7 @@ const updateCarouselDepth = (carousel) => {
     return;
   }
 
-  const carouselCenter = carousel.getBoundingClientRect().left + carousel.clientWidth / 2;
+  const carouselCenter = window.innerWidth / 2;
 
   carousel.querySelectorAll(".carousel-card").forEach((card) => {
     const rect = card.getBoundingClientRect();
@@ -108,6 +108,18 @@ if (mediaCarousel) {
   });
 }
 
+if (productCarousel) {
+  const originalCards = Array.from(productCarousel.children);
+
+  originalCards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.classList.remove("is-focused");
+    clone.setAttribute("aria-hidden", "true");
+    clone.tabIndex = -1;
+    productCarousel.appendChild(clone);
+  });
+}
+
 document.querySelectorAll(".media-card video").forEach((video) => {
   video.muted = true;
   video.loop = true;
@@ -118,8 +130,6 @@ document.querySelectorAll(".media-card video").forEach((video) => {
 
 const productCards = document.querySelectorAll("[data-case-target]");
 const casePanels = document.querySelectorAll("[data-case-panel]");
-const productPrev = document.querySelector("[data-product-prev]");
-const productNext = document.querySelector("[data-product-next]");
 let activeCase = document.querySelector("[data-case-target].is-focused")?.dataset.caseTarget || "limer";
 
 const setActiveCase = (target, options = {}) => {
@@ -166,17 +176,21 @@ productCards.forEach((card) => {
   card.addEventListener("click", () => setActiveCase(card.dataset.caseTarget));
 });
 
-const stepProduct = (direction) => {
+const stepProduct = (direction, options = {}) => {
   const cards = Array.from(productCards);
   const index = cards.findIndex((card) => card.dataset.caseTarget === activeCase);
   const nextIndex = (index + direction + cards.length) % cards.length;
-  setActiveCase(cards[nextIndex].dataset.caseTarget);
+  setActiveCase(cards[nextIndex].dataset.caseTarget, options);
 };
 
-productPrev?.addEventListener("click", () => stepProduct(-1));
-productNext?.addEventListener("click", () => stepProduct(1));
+window.setInterval(() => {
+  if (!productCards.length || reduceMotion.matches) {
+    return;
+  }
 
-productCarousel?.addEventListener("scroll", () => updateCarouselDepth(productCarousel), { passive: true });
+  stepProduct(1, { scrollCard: false });
+}, 6200);
+
 updateCarouselDepth(productCarousel);
 
 const contactButton = document.querySelector(".nav-cta");

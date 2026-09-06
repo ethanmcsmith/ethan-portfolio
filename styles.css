@@ -180,7 +180,7 @@ input {
 }
 
 .action-pill {
-  width: 2.8rem;
+  width: 6.85rem;
   gap: 0.4rem;
   padding: 0 0.85rem;
   border-radius: 999px;
@@ -230,17 +230,27 @@ input {
 }
 
 .action-short {
-  display: none;
+  display: inline;
+  opacity: 1;
+  transition: opacity 140ms ease;
 }
 
 .action-full {
+  display: none;
   opacity: 0;
   transform: translateX(-0.25rem);
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
+.action-pill:hover .action-short,
+.action-pill:focus-visible .action-short {
+  display: none;
+  opacity: 0;
+}
+
 .action-pill:hover .action-full,
 .action-pill:focus-visible .action-full {
+  display: inline;
   opacity: 1;
   transform: translateX(0);
 }
@@ -279,16 +289,17 @@ input {
   max-width: 20ch;
   margin: 0.65rem 0;
   font-size: clamp(2.05rem, 4.15vw, 3.85rem);
-  line-height: 1;
+  line-height: 1.08;
 }
 
 .flip-word {
   display: inline-block;
-  min-width: 6.5ch;
+  padding-bottom: 0.08em;
   color: transparent;
   background: linear-gradient(120deg, #fff, #a9fff8 50%, #ffb168);
   background-clip: text;
   -webkit-background-clip: text;
+  vertical-align: baseline;
 }
 
 .flip-word.is-changing {
@@ -341,16 +352,22 @@ input {
 
 .portfolio-strip {
   padding-top: 0;
+  padding-bottom: 0;
 }
 
-#media {
+#media,
+#product {
   width: 100%;
   max-width: none;
   overflow: hidden;
 }
 
+#media {
+  margin-top: clamp(1.6rem, 3.4vw, 3.2rem);
+}
+
 .portfolio-strip + .portfolio-strip {
-  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 0;
 }
 
 .section-bar {
@@ -372,7 +389,7 @@ input {
 
 .carousel {
   display: flex;
-  gap: 1.15rem;
+  gap: 0;
   overflow-x: auto;
   overflow-y: visible;
   padding: 1.45rem max(1rem, calc((100vw - var(--max)) / 2 + 1rem));
@@ -388,7 +405,7 @@ input {
 
 .carousel-card {
   position: relative;
-  flex: 0 0 clamp(18rem, 34vw, 28rem);
+  flex: 0 0 clamp(24rem, 43vw, 38rem);
   min-height: auto;
   overflow: hidden;
   scroll-snap-align: center;
@@ -415,7 +432,7 @@ input {
 
 .media-card {
   aspect-ratio: 16 / 9;
-  flex-basis: clamp(18rem, 34vw, 28rem);
+  flex-basis: clamp(24rem, 43vw, 38rem);
   min-height: 0;
   border-radius: 1rem;
 }
@@ -522,9 +539,9 @@ input {
   min-width: max-content;
   margin-inline: 0;
   overflow: visible;
-  padding-inline: 1rem;
+  padding-inline: 0;
   scroll-snap-type: none;
-  animation: mediaTicker 44s linear infinite;
+  animation: mediaTicker 52s linear infinite;
 }
 
 .media-carousel:hover {
@@ -536,20 +553,27 @@ input {
 }
 
 .product-carousel-wrap {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 0.8rem;
-  align-items: center;
+  overflow: hidden;
+  margin-inline: calc(50% - 50vw);
 }
 
 .product-carousel {
+  width: max-content;
+  min-width: max-content;
   margin: 0;
-  padding: 2rem 0;
+  padding: 1.45rem 0;
+  overflow: visible;
+  scroll-snap-type: none;
+  animation: productTicker 38s linear infinite;
+}
+
+.product-carousel:hover {
+  animation-play-state: paused;
 }
 
 .product-card {
   min-height: 21rem;
-  flex-basis: clamp(20rem, 37vw, 32rem);
+  flex-basis: clamp(23rem, 38vw, 34rem);
   cursor: pointer;
 }
 
@@ -580,7 +604,7 @@ input {
 }
 
 .carousel-control {
-  display: grid;
+  display: none;
   width: 3rem;
   height: 3rem;
   place-items: center;
@@ -854,6 +878,16 @@ input {
   }
 }
 
+@keyframes productTicker {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 900px) {
   .topbar {
     align-items: stretch;
@@ -892,14 +926,6 @@ input {
   .case-article,
   .resume-grid {
     grid-template-columns: 1fr;
-  }
-
-  .product-carousel-wrap {
-    grid-template-columns: 1fr;
-  }
-
-  .carousel-control {
-    display: none;
   }
 
   .footer-links {
@@ -952,6 +978,7 @@ input {
 
   .portfolio-strip {
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   .hero {
@@ -975,7 +1002,7 @@ input {
 
   .carousel-card,
   .product-card {
-    flex-basis: 78vw;
+    flex-basis: 88vw;
   }
 
   .phone-stack {
