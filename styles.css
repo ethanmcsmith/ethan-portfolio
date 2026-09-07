@@ -421,7 +421,7 @@ input {
   gap: 0.75rem;
   padding: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 1.2rem;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.07);
   color: var(--text);
   text-align: left;
@@ -431,10 +431,18 @@ input {
 }
 
 .media-card {
-  aspect-ratio: 16 / 9;
   flex-basis: clamp(24rem, 43vw, 38rem);
   min-height: 0;
-  border-radius: 1rem;
+  border-radius: 0;
+}
+
+.media-card-video {
+  aspect-ratio: 16 / 9;
+}
+
+.media-card-photo {
+  aspect-ratio: 2200 / 1721;
+  flex-basis: clamp(19rem, 35vw, 31rem);
 }
 
 .media-card img,
@@ -447,8 +455,7 @@ input {
 
 .media-card img,
 .media-card video {
-  object-fit: contain;
-  background: #000;
+  object-fit: cover;
 }
 
 .media-card > img,
