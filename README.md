@@ -44,7 +44,7 @@ Film polish verification: desktop 1440 × 900 and mobile 390 × 844. Checked imm
 
 ## Software showcase
 
-`#software` presents Ethan M.C. Smith Portfolio → 496 Gym → Flatline Pest Technology directly on the section’s black page background, with white copy and berry/gold accents. The contained white panel and frosted panes are removed. A 2px white outline follows each webpage card’s existing rounded edge, preserving its dimensions. The original screenshots stay uncropped in their 2940 × 1912 proportions, with 8px corners, 5000px perspective, and −45° Y rotation. They enter with a staggered spring and settle into low ascending peeks. “Creative library” uses italic Accanthis with a masked entrance. There are no file-name tabs.
+`#software` presents Ethan M.C. Smith Portfolio → 496 Gym → Flatline Pest Technology directly on the section’s black page background, with white copy and berry/gold accents. The contained white panel and frosted panes are removed. A soft charcoal radial gradient behind the cards follows [Kusal’s creative library](https://www.kusaludhara.com/), feathering into the black page at the top and bottom; it fades away for the light Limer theme. A 2px white outline follows each webpage card’s existing rounded edge, preserving its dimensions. The original screenshots stay uncropped in their 2940 × 1912 proportions, with 8px corners, 5000px perspective, and −45° Y rotation. They enter with a staggered spring and settle into low ascending peeks. “Creative library” uses italic Accanthis and is visible immediately, without an entrance animation or clipping mask. There are no file-name tabs.
 
 All file positions measure upward from the same pocket lip. Selecting a file raises it vertically, while both inactive files tuck to a shared lower level. The original front-to-back stacking order and perspective tilt stay fixed: the selected file rises behind any files already in front of it, without a z-index promotion. Hover, click/tap, keyboard arrows, Home/End, and Escape retain their controls; leaving or dismissing selection restores “Browse my creative library.” The panel uses `overflow: clip` to prevent keyboard focus from scrolling its contents internally. Reduced motion keeps the file positions and tilt static.
 
@@ -60,7 +60,7 @@ Cabinet/theme correction verification: at 1440 × 900 and 390 × 844, checked th
 
 Selection correction: cards now retain their original stacking order and perspective tilt; selection changes only their vertical position. The production build validates all inline scripts.
 
-September 9 library refinement: the default library heading and subtext sit lower while selected project information retains its position. The italic reveal mask has additional room for descenders. The contact heading uses smaller responsive type to fit one line; “meaningful.” remains italic and is now white. Build and source checks confirm the existing embedded assets and all linked Film assets are preserved. Earlier white-panel validation describes the previous design.
+September 9 library refinement: the default library heading and subtext sit lower while selected project information retains its position. The italic title now renders without a clipping mask or an intro animation. The contact heading uses smaller responsive type to fit one line; “meaningful.” remains italic and is now white. Build and source checks confirm the existing embedded assets and all linked Film assets are preserved. Earlier white-panel validation describes the previous design.
 
 ## Production publishing
 
