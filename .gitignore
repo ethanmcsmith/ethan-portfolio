@@ -16,3 +16,11 @@ assets/NABJ Group Pic.PNG
 assets/RaeganNABJ.JPG
 assets/RyanNABJ.JPG
 assets/TanaeNABJ.JPG
+
+# New portfolio build output and original local media.
+node_modules/
+dist/
+dist-github-pages/
+.openai/
+assets/**/*.mp4
+assets/**/*.mov

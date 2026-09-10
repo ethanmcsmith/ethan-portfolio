@@ -1,0 +1,7 @@
+{
+  "name": "revelatio-single-html",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "node serve.mjs", "build": "node build.mjs", "build:github-pages": "node build.mjs --github-pages" }
+}
