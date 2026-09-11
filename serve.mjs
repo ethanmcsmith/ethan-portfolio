@@ -19,6 +19,7 @@ async function registerShowcaseFolder(folder) {
 }
 await registerShowcaseFolder('assets/film showcase assets');
 await registerShowcaseFolder('assets/software showcase assets');
+await registerShowcaseFolder('assets/testimonials');
 createServer(async (req, res) => {
   try {
     const pathname = decodeURIComponent(new URL(req.url, `http://${host}`).pathname);

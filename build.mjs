@@ -55,8 +55,9 @@ await copySoftwareScreenshots('assets/software showcase assets');
 for (const match of html.matchAll(/(?:src|data-src)="(assets\/software%20showcase%20assets\/[^\"]+)"/g)) {
   await stat(decodeURIComponent(match[1]));
 }
+await copySoftwareScreenshots('assets/testimonials');
 console.log(`Built standalone HTML (${(Buffer.byteLength(html)/1024/1024).toFixed(2)} MB); validated ${count} inline scripts.`);
 console.log(`Copied ${mediaCount} linked film videos, thumbnails, and stills.`);
-console.log(`Copied ${softwareCount} linked software screenshots, preserving nested folders.`);
+console.log(`Copied ${softwareCount} linked software screenshots and testimonial portraits, preserving nested folders.`);
 
 if (githubPages) console.log('GitHub Pages output: dist-github-pages; original films and reel stream from existing R2 hosting.');
