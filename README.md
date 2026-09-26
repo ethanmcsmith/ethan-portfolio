@@ -34,7 +34,7 @@ The ASCII zoom container has no padding or internal overflow clipping, and its c
 
 ## Film showcase
 
-`#film` presents Steel Hearts, The Civilizing Effect, and The Talking Stage in one sticky, continuous horizontal sequence. Every scroll increment drives video expansion or horizontal travel: each film expands immediately over 1.8 viewport heights, then advances to the next over 0.85 viewport heights. There are no composition or viewing holds. The overall timeline is 7.1 viewport heights, followed immediately by the sticky stage’s exit. One berry (`#b20746`) progress bar spans the viewport at its very top. The Film header link lands at the stage start; a keyboard-accessible skip link bypasses the sequence.
+`#film` presents Steel Hearts, The Civilizing Effect, and The Talking Stage in one sticky, continuous horizontal sequence. Every scroll increment drives video expansion or horizontal travel: each film expands immediately over 1.8 viewport heights, then advances to the next over 0.85 viewport heights. There are no composition or viewing holds. The overall timeline is 7.1 viewport heights, followed immediately by the sticky stage’s exit. One berry (`#b20746`) progress bar spans the viewport at its very top. The Film header link lands at the stage start. The showcase skip link has been removed.
 
 Each composition pairs its real thumbnail with one large still window and the same expandable video frame. Stills are drawn from a shuffled pool without repeats until the pool is exhausted, crossfading every 3.8 seconds while the composition is visible. The still window stays above the title area and fades/translates away during expansion. WATCH FILM has a white play triangle; the video frame has no border or hard outline, only a subtle shadow.
 
@@ -71,3 +71,50 @@ The single HTML file keeps its embedded fonts and ASCII hero video. Film stills,
 September 10 update: website card ratios match the newly cropped 2940 × 1845 screenshots. The smaller height allows slightly wider cards while preserving the pocket peeks and stacking. Film stills preload before the showcase, limit simultaneous downloads to two, prepare the next active-film still, and only crossfade fully decoded image elements. The original PNGs and films remain unchanged. The testimonials now contain the full Keon Mollineau and Michael Yeeloy quotations and their linked portraits, with manual navigation and a content-sized layout. Both preview and production builds include the portraits.
 
 Latest refinements: the production build fingerprints website screenshot filenames by SHA-256 content so new crops receive new cache URLs. Local previews retain original filenames. The pocket brim follows the global theme with a #111214 dark edge and #e9e8e5 light edge, each with a recessed shadow. Header hover details are berry. Testimonials advance after their individual reading time (200 words/minute plus three seconds), pause on hover/focus or when hidden, and remain manual for reduced motion. The contact heading now uses clamp(16px,3.7vw,56px).
+
+
+## September 11 interaction and mobile refinement
+
+The initial loader now follows [Modus](https://modus.fantik.studio/): a centered, glowing white pixel counter on black, with its typeface embedded in the single HTML file. It counts continuously to 100 and fades into the existing hero. Essential font/document readiness gates it; linked films and offscreen stills cannot hold it open.
+
+The library pocket has no top border. Recessed shadows define the lip, while resting peeks are 160px on desktop and 88px on mobile. Portfolio is selected once when the staggered first entrance completes; earlier visitor selections take priority. File order, perspective, focus behavior, and original PNGs remain intact.
+
+Mobile and touch layouts use a vertical Film list with title/roles, a single full-width poster/player, and a 44px control row. Separate desktop key art and cycling stills are hidden in this layout, avoiding redundant media and downloads. Films start only after visitor input on mobile. Play prompts are circular SVG icons; ten-second seek buttons remain below mobile players and expanded desktop films. All diagonal arrow characters have been removed.
+
+Desktop retains the continuous expansion/horizontal sequence, now directly tied to scroll progress. The previous input resistance and touch-end settling are removed. The mobile ASCII hero uses stable `svh` dimensions and ignores URL-bar changes in its expansion geometry. The mobile Limer phone enters once instead of repeatedly scrubbing back through its entrance.
+
+Still transitions keep the outgoing image beneath a decoded incoming image and remove it after the incoming fade completes; they never reinsert the outgoing image above the new one. The two-download limit and prepared next still are preserved.
+
+The two approved testimonial excerpts fit within four lines at 320px and larger tested widths, omit “Mr.”, and each receive nine seconds after the preceding transition finishes. Hover, focus, offscreen, hidden-tab, and reduced-motion pause rules remain. A resize during a transition now resets the current text nodes to their correct final positions. The mobile contact statement uses 32px or larger type with a balanced wrap; the Limer status is white on dark backgrounds.
+
+
+## Mobile scrolling and loading follow-up
+
+Mobile/touch layouts now use native scrolling without initializing Lenis or its non-passive touch listeners. The ASCII renderer and its video pause outside the hero or in a hidden tab and resume on return. Mobile theme colors update synchronously on scroll with zero-duration color transitions, keeping text and background aligned at the viewport-midpoint handoff. The Film skip button and its handler/styles are removed.
+
+Website cards request images eagerly and use responsive 960px PNG derivatives on mobile (about 1.6 MB combined versus 9.4 MB for the originals). Original full-resolution PNGs remain unchanged and linked as larger srcset candidates. The Pages build fingerprints both original and mobile PNGs by their content.
+
+
+## September 11 design corrections
+
+The theme retains a 0.35-second fade. A single registered root property drives the entire palette, so text, nested text, and all page backgrounds interpolate in phase. Reduced motion remains immediate.
+
+The hero now reads “I’m Ethan. I Create Meaningful Experiences” / “In Film, Software & Design.” in smaller desktop type. On phones, the greeting occupies its own line so the copy remains readable. “Create” and “In Film,” keep the italic Accanthis face; the masked entrance and opposing horizontal drift remain.
+
+The pocket lip uses a lighter elliptical occlusion shadow that is deepest in the middle and fades before either end. Desktop Film now snaps to the nearest thumbnail or fully expanded position over the entire interval after an idle delay, without direction bias or inertia prediction. Mobile/touch and reduced-motion layouts have no snapping.
+
+The full approved 496 Gym and Flatline Pest Tech quotations replace the excerpts, with content-sized layouts and reading-time-based autoplay retained. The original `assets/ethanmcsmith portfolio logo.png` is the linked favicon/touch icon and is copied by both builds.
+
+## September 15 navigation and accessibility
+
+A persistent section rail follows Modus’s square markers and corner brackets, with the current label visible and other labels revealed on hover or keyboard focus. The current section stays highlighted during clicks and free scrolling. On phones and touch layouts, the same links form a bottom dock. Links have large hit areas and gold keyboard focus.
+
+The Film navigation remains available during expansion and horizontal travel. It offers the previous/next page sections and direct choices for all three films. The small frame has a labeled expand action; the circular play button remains usable, and expansion can be interrupted. The desktop thumbnail and expanded player share one centered 16:9 presentation area, with equal side margins and room below for titles and controls. Native mobile and reduced-motion layouts keep title, player, and navigation easy to reach.
+
+Section jumps bypass the older Webflow delegated link animation to avoid a competing second scroll. Lenis starts/stops with desktop pointer and motion preferences, and its old animation frame loop is stopped on teardown. The library now uses “Preview” and displays case-study notices in both its introduction and selected project details.
+
+Film still windows never use thumbnail backgrounds. Initial loads try up to three numbered originals before reporting an unavailable still; subsequent attempts continue through the still pool. Successfully decoded images and the two-download limit are preserved, and later load failures retain the outgoing still.
+
+## September 26 presentation polish
+
+The hero starts with “I’m Ethan.” Case-study notices have their own gold text and rule beneath the library introduction and selected project descriptions. Desktop film expansion ends at the exact thumbnail bounds, with matching centered geometry for all three films.

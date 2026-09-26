@@ -4,6 +4,7 @@ import { createReadStream } from 'node:fs';
 const host = '127.0.0.1';
 const port = 4173;
 const files = new Map([
+  ['/assets/ethanmcsmith portfolio logo.png', ['assets/ethanmcsmith portfolio logo.png', 'image/png']],
   ['/', ['index.html', 'text/html; charset=utf-8']],
   ['/index.html', ['index.html', 'text/html; charset=utf-8']],
   ['/assets/Ethan Reel Compressed.mp4', ['assets/Ethan Reel Compressed.mp4', 'video/mp4']],

@@ -16,7 +16,7 @@ if (!html.includes('data-ascii-canvas')) throw new Error('Missing ASCII hero');
 await mkdir(output, { recursive: true });
 
 await mkdir(`${output}/assets`, { recursive: true });
-for (const asset of ['Ethan Reel Compressed.mp4', 'EthanMCSmith Resume.pdf']) {
+for (const asset of ['Ethan Reel Compressed.mp4', 'EthanMCSmith Resume.pdf', 'ethanmcsmith portfolio logo.png']) {
   if (githubPages && asset.endsWith('.mp4')) continue;
   await copyFile(`assets/${asset}`, `${output}/assets/${asset}`);
 }
@@ -60,7 +60,7 @@ await copySoftwareScreenshots('assets/testimonials');
 // Content-addressed website screenshots bypass stale browser/CDN cache entries.
 // Keep original local paths in source; publish byte-identical, versioned PNGs.
 if (githubPages) {
-  const urls = [...new Set([...html.matchAll(/src="(assets\/software%20showcase%20assets\/[^"\n]*Website[^"\n]*\.png)"/g)].map(match => match[1]))];
+  const urls = [...new Set([...html.matchAll(/(assets\/software%20showcase%20assets\/[^"\s,]*Website[^"\s,]*\.png)/g)].map(match => match[1]))];
   for (const url of urls) {
     const filename = decodeURIComponent(url);
     const data = await readFile(filename);
