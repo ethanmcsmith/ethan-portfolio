@@ -109,7 +109,7 @@ The full approved 496 Gym and Flatline Pest Tech quotations replace the excerpts
 
 A persistent section rail follows Modus’s square markers and corner brackets, with the current label visible and other labels revealed on hover or keyboard focus. The current section stays highlighted during clicks and free scrolling. On phones and touch layouts, the same links form a bottom dock. Links have large hit areas and gold keyboard focus.
 
-The Film navigation remains available during expansion and horizontal travel. It offers the previous/next page sections and direct choices for all three films. The small frame has a labeled expand action; the circular play button remains usable, and expansion can be interrupted. The desktop thumbnail and expanded player share one centered 16:9 presentation area, with equal side margins and room below for titles and controls. Native mobile and reduced-motion layouts keep title, player, and navigation easy to reach.
+The Film navigation remains available during expansion and horizontal travel. It offers the previous/next page sections and direct choices for all three films. The small frame has a labeled expand action; the circular play button remains usable, and expansion can be interrupted. Desktop thumbnails retain their original full-stage scale. Players expand to the viewport width minus two 16px margins, with height fitting above film navigation. The toolbar moves inside the expanding frame, and the composition title fades as the video takes over. Native mobile and reduced-motion layouts keep title, player, and navigation easy to reach.
 
 Section jumps bypass the older Webflow delegated link animation to avoid a competing second scroll. Lenis starts/stops with desktop pointer and motion preferences, and its old animation frame loop is stopped on teardown. The library now uses “Preview” and displays case-study notices in both its introduction and selected project details.
 
@@ -117,4 +117,8 @@ Film still windows never use thumbnail backgrounds. Initial loads try up to thre
 
 ## September 26 presentation polish
 
-The hero starts with “I’m Ethan.” Case-study notices have their own gold text and rule beneath the library introduction and selected project descriptions. Desktop film expansion ends at the exact thumbnail bounds, with matching centered geometry for all three films.
+The hero starts with “I’m Ethan.” Case-study notices have their own gold text and rule beneath the library introduction and selected project descriptions. The initial centered player sizing was subsequently enlarged in the October 3 correction below.
+
+## October 3 film sizing correction
+
+Restored the original full-stage thumbnail size and enlarged the final player to near full width. Short screens contain the original video without cropping, and film navigation remains accessible below the player.
